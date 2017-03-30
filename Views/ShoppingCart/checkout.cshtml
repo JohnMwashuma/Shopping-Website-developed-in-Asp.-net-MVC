@@ -1,0 +1,302 @@
+﻿@model GrandLabFixers.ViewModels.OrderForm
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@{
+    //var productId = Request.Url.Segments[3];
+    int productId = Convert.ToInt32(HttpContext.Current.Request.Url.Segments[3]);*@
+}
+<div class="clearfix site-width">
+<div class="col-main">
+<div class="page-title">
+    <h1>Checkout</h1>
+</div>
+@using (Html.BeginForm("CreateOrder", "ShoppingCart", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <ol class="opc opc-firststep-billing collpse" id="checkoutSteps" role="tablist" aria-multiselectable="true">
+    <li id="opc-billing" class="section allow ">
+        <div class="step-title" role="tab" id="headingOne">
+            <span class="number">1</span>
+            <h2>Shipping Information</h2>
+            <a data-toggle="collapse" data-parent="#checkoutSteps" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Edit</a>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+            <div id="checkout-step-billing" class="step a-item">
+                <form id="" action="https://www.nuaire.com/checkout/onepage/">
+                    <div class="fieldset">
+                        <p class="required">* Required Fields</p>
+                        <ul class="form-list">
+                            <li id="billing-new-address-form" class="scaffold-form">
+                                <div class="fieldset">
+                                  <ul>
+                                        <li class="fields">
+                                            <div class="customer-name-middlename">
+                                                <div class="field name-firstname">
+                                                    <label  class="required"><em>*</em>First Name</label>
+                                                    <div class="input-box">
+                                                        @Html.TextBoxFor(m => m.FirstName, new { @class = "input-text required-entry", @placeholder = "First Name", @type = "text", @title = "First Name", @maxlength = "255" })
+                                                      </div>
+                                                </div>
+
+                                                <div class="field name-lastname">
+                                                    <label  class="required"><em>*</em>Last Name</label>
+                                                    <div class="input-box">
+                                                        @Html.TextBoxFor(m => m.LastName, new {@class = "input-text required-entry", @placeholder = "Last Name", @type = "text", @title = "Last Name", @maxlength = "255"})
+                                                    </div>
+                                                </div>
+
+                                                <div class="field">
+                                                    <label class="required"><em>*</em>Company</label>
+                                                    <div class="input-box">
+                                                        @Html.TextBoxFor(m => m.Company, new { @class = "input-text required-entry", @placeholder = "Company Name", @type = "text", @title = "Company Name" })
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </li>
+
+                                        <li class="wide">
+                                            <label class="required"><em>*</em>Delivery Address</label>
+                                            <div class="input-box">
+                                                @Html.TextBoxFor(m => m.Address, new { @class = "input-text required-entry", @placeholder = "Delivery Address", @type = "text", @title = "Delivery Address", @maxlength = "255" })
+                                            </div>
+                                        </li>
+
+                                        <li class="fields">
+                                            <div class="field">
+                                                <label class="required"><em>*</em>City</label>
+                                                <div class="input-box">
+                                                    @Html.TextBoxFor(m => m.City, new { @class = "input-text required-entry", @placeholder = "City Name", @type = "text", @title = "City" })
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label class="required"><em>*</em>Country</label>
+                                                <div class="input-box">
+                                                  @Html.DropDownListFor(m => m.Country, new SelectList(Model.Countries, "Id", "Name"), "", new { @class = "input-text required-entry",@type="text", @title = "Country",@placeholder="Select Country" })
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="fields">
+                                            <div class="field">
+                                                <label class="required"><em>*</em>Telephone</label>
+                                                <div class="input-box">
+                                                    @Html.TextBoxFor(m => m.Phone, new { @class = "input-text required-entry", @placeholder = "Phone Number", @type = "tel", @title = "Telephone" })
+                                                 </div>
+                                            </div>
+
+                                            <div class="field">
+                                                <label>Additional Telephone</label>
+                                                <div class="input-box">
+                                                    @Html.TextBoxFor(m => m.AdditionalPhone, new { @class = "input-text", @placeholder = "Optional Additional Phone Number", @type = "tel", @title = "Additinal Telephone" })
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                     </ul>
+
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </li>
+
+    <li id="opc-shipping_method" class="section allow">
+        <div class="step-title" role="tab" id="headingTwo">
+            <span class="number">2</span>
+            <h2>Shipping Method</h2>
+            <a class="collapsed" data-toggle="collapse" data-parent="#checkoutSteps" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Edit</a>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div id="checkout-step-shipping_method" class="step a-item">
+                <form id="" action="https://www.nuaire.com/checkout/onepage/">
+                    <div id="checkout-shipping-method-load">
+                        <dl class="sp-methods">
+                            <dt>Select A PickUp Station</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        <input name="shipping_method" type="radio" value="ups_03" id="s_method_ups_03" checked="checked" class="radio">
+
+
+                                        <label for="s_method_ups_03">Nairobi <span class="price">$172.50</span>                                                </label>
+                                    </li>
+                                    <li>
+                                        <input name="shipping_method" type="radio" value="ups_12" id="s_method_ups_12" class="radio">
+
+                                        <label for="s_method_ups_12">Makupa Round About <span class="price">$427.31</span>                                                </label>
+                                    </li>
+                                    <li>
+                                        <input name="shipping_method" type="radio" value="ups_02" id="s_method_ups_02" class="radio">
+
+                                        <label for="s_method_ups_02">UPS Second Day Air <span class="price">$667.28</span>                                                </label>
+                                    </li>
+                                    <li>
+                                        <input name="shipping_method" type="radio" value="ups_01" id="s_method_ups_01" class="radio">
+
+                                        <label for="s_method_ups_01">UPS Next Day Air <span class="price">$906.37</span>                                                </label>
+                                    </li>
+                                    <li>
+                                        <input name="shipping_method" type="radio" value="ups_14" id="s_method_ups_14" class="radio">
+
+                                        <label for="s_method_ups_14">UPS Next Day Air Early A.M. <span class="price">$937.80</span>                                                </label>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </li>
+
+    <li id="opc-payment" class="section allow">
+        <div class="step-title" role="tab" id="headingThree">
+            <span class="number">3</span>
+            <h2>Payment Information</h2>
+            <a class="collapsed" data-toggle="collapse" data-parent="#checkoutSteps" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Edit</a>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+            <div id="checkout-step-payment" class="step a-item">
+
+                <form action="https://www.nuaire.com/checkout/onepage/" id="">
+                    <div class="fieldset">
+                        <dl class="sp-methods" id="checkout-payment-method-load">
+                            <dt id="dt_method_verisign">
+                                <input id="p_method_verisign" value="verisign" type="radio" name="payment[method]" title="Credit Card" class="radio" autocomplete="off">
+                                <label for="p_method_verisign">Pay On Delivery </label>
+                            </dt>
+
+                            <dt id="dt_method_paypaluk_express">
+                                <input id="p_method_paypaluk_express" value="paypaluk_express" type="radio" name="payment[method]" title="PayPal Express Checkout Payflow Edition" class="radio" autocomplete="off">
+                                <label for="p_method_paypaluk_express">
+                                    <!-- PayPal Logo -->
+                                    <img src="~/Images/pp-acceptance-medium.png" alt="Acceptance Mark" class="v-middle">&nbsp;
+                                    <a href="#">
+                                        What is PayPal?
+                                    </a>
+                                    <!-- PayPal Logo -->
+                                </label>
+                            </dt>
+                            <dd id="dd_method_paypaluk_express">
+                                <ul class="form-list" id="payment_form_paypaluk_express" style="display: none;">
+                                    <li class="form-alt">You will be redirected to the PayPal website.</li>
+                                </ul>
+                            </dd>
+
+                        </dl>
+                    </div>
+                </form>
+                <div class="tool-tip" id="payment-tool-tip" style="display: none;">
+                    <div class="btn-close">
+                        <a href="https://www.nuaire.com/checkout/onepage/#" id="payment-tool-tip-close" title="Close">Close</a>
+                    </div>
+                    <div class="tool-tip-content">
+                        <img src="./Checkout paymnt2_files/cvv.gif" alt="Card Verification Number Visual Reference" title="Card Verification Number Visual Reference">
+                    </div>
+                </div>
+                <div class="buttons-set" id="payment-buttons-container">
+                    <p class="back-link">
+                        <a href="@Url.Action("Index","ShoppingCart")"><small>« </small>Back</a>
+                    </p>
+                    <button type="submit" class="button"><span><span>Send</span></span></button>
+
+                </div>
+
+            </div>
+        </div>
+    </li>
+
+    </ol>
+
+}
+<div class="std"></div>
+</div>
+
+    @Html.Partial("_sidebar")
+
+</div>
+
+
+
+@*<dd id="dd_method_verisign">
+        <ul class="form-list" id="payment_form_verisign">
+            <li>
+                <p class="required">* Required Fields</p>
+                <label for="verisign_cc_type" class="required"><em>*</em>Credit Card Type</label>
+                <div class="input-box">
+                    <select id="verisign_cc_type" name="payment[cc_type]" class="required-entry validate-cc-type-select" title="Credit Card Type" autocomplete="off" style="width: 30px;">
+                        <option value="">--Please Select--</option>
+                        <option value="AE">American Express</option>
+                        <option value="VI">Visa</option>
+                        <option value="MC">MasterCard</option>
+                        <option value="DI">Discover</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <label for="verisign_cc_number" class="required"><em>*</em>Credit Card Number</label>
+                <div class="input-box">
+                    <input type="text" pattern="\d*" id="verisign_cc_number" name="payment[cc_number]" title="Credit Card Number" class="input-text validate-cc-number validate-cc-type" value="" autocomplete="off">
+                </div>
+            </li>
+            <li id="verisign_cc_type_exp_div">
+                <label for="verisign_expiration" class="required"><em>*</em>Expiration Date</label>
+                <div class="input-box">
+                    <div class="v-fix">
+                        <select id="verisign_expiration" name="payment[cc_exp_month]" class="month validate-cc-exp required-entry" autocomplete="off" style="width: 30px;">
+                            <option value="" selected="selected">Month</option>
+                            <option value="1">01 - January</option>
+                            <option value="2">02 - February</option>
+                            <option value="3">03 - March</option>
+                            <option value="4">04 - April</option>
+                            <option value="5">05 - May</option>
+                            <option value="6">06 - June</option>
+                            <option value="7">07 - July</option>
+                            <option value="8">08 - August</option>
+                            <option value="9">09 - September</option>
+                            <option value="10">10 - October</option>
+                            <option value="11">11 - November</option>
+                            <option value="12">12 - December</option>
+                        </select>
+                    </div>
+                    <div class="v-fix">
+                        <select id="verisign_expiration_yr" name="payment[cc_exp_year]" class="year required-entry" autocomplete="off" style="width: 30px;">
+                            <option value="" selected="selected">Year</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                        </select>
+                    </div>
+                </div>
+            </li>
+            <li id="verisign_cc_type_cvv_div">
+                <label for="verisign_cc_cid" class="required"><em>*</em>Card Verification Number</label>
+                <div class="input-box">
+                    <div class="v-fix">
+                        <input type="text" pattern="\d*" title="Card Verification Number" class="input-text cvv required-entry validate-cc-cvn" id="verisign_cc_cid" name="payment[cc_cid]" value="" autocomplete="off">
+                    </div>
+                    <a href="https://www.nuaire.com/checkout/onepage/#" class="cvv-what-is-this">What is this?</a>
+                </div>
+            </li>
+
+        </ul>
+    </dd>*@

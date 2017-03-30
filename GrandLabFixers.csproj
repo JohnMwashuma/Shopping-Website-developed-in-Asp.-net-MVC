@@ -1,0 +1,1263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{654FB59C-34A6-41F3-AB8C-B1308BF8E2D5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GrandLabFixers</RootNamespace>
+    <AssemblyName>GrandLabFixers</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.3\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MvcCheckBoxList, Version=1.4.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcCheckBoxList.1.4.5\lib\net45\MvcCheckBoxList.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612180931012_InitialCreate.cs" />
+    <Compile Include="Migrations\201612180931012_InitialCreate.Designer.cs">
+      <DependentUpon>201612180931012_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612271221239_CreateProductTable.cs" />
+    <Compile Include="Migrations\201612271221239_CreateProductTable.Designer.cs">
+      <DependentUpon>201612271221239_CreateProductTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701030918494_AddedProductPrice.cs" />
+    <Compile Include="Migrations\201701030918494_AddedProductPrice.Designer.cs">
+      <DependentUpon>201701030918494_AddedProductPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701060947567_OverrideConventionsForProductsAndOrders.cs" />
+    <Compile Include="Migrations\201701060947567_OverrideConventionsForProductsAndOrders.Designer.cs">
+      <DependentUpon>201701060947567_OverrideConventionsForProductsAndOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701060955127_RemovedClientFromProductsToOrders.cs" />
+    <Compile Include="Migrations\201701060955127_RemovedClientFromProductsToOrders.Designer.cs">
+      <DependentUpon>201701060955127_RemovedClientFromProductsToOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701061433575_AddedImageAndChangedPriceTypeInPeoducts.cs" />
+    <Compile Include="Migrations\201701061433575_AddedImageAndChangedPriceTypeInPeoducts.Designer.cs">
+      <DependentUpon>201701061433575_AddedImageAndChangedPriceTypeInPeoducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701070705218_AddedPriceInProducts.cs" />
+    <Compile Include="Migrations\201701070705218_AddedPriceInProducts.Designer.cs">
+      <DependentUpon>201701070705218_AddedPriceInProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701181126118_AddedCategoryTable.cs" />
+    <Compile Include="Migrations\201701181126118_AddedCategoryTable.Designer.cs">
+      <DependentUpon>201701181126118_AddedCategoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701181133046_OverrideConventionsOfCategory.cs" />
+    <Compile Include="Migrations\201701181133046_OverrideConventionsOfCategory.Designer.cs">
+      <DependentUpon>201701181133046_OverrideConventionsOfCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701181145227_PopulateCategoryTable.cs" />
+    <Compile Include="Migrations\201701181145227_PopulateCategoryTable.Designer.cs">
+      <DependentUpon>201701181145227_PopulateCategoryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701181218268_OverrideImageConventions.cs" />
+    <Compile Include="Migrations\201701181218268_OverrideImageConventions.Designer.cs">
+      <DependentUpon>201701181218268_OverrideImageConventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701240601518_AddedCartTable.cs" />
+    <Compile Include="Migrations\201701240601518_AddedCartTable.Designer.cs">
+      <DependentUpon>201701240601518_AddedCartTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701280831247_addedcartinproducttable.cs" />
+    <Compile Include="Migrations\201701280831247_addedcartinproducttable.Designer.cs">
+      <DependentUpon>201701280831247_addedcartinproducttable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701310953223_AddedOrderDetailTableAndModifiedOrderTableConventions.cs" />
+    <Compile Include="Migrations\201701310953223_AddedOrderDetailTableAndModifiedOrderTableConventions.Designer.cs">
+      <DependentUpon>201701310953223_AddedOrderDetailTableAndModifiedOrderTableConventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311027258_ModifiedOrderDetailsTableConventions.cs" />
+    <Compile Include="Migrations\201701311027258_ModifiedOrderDetailsTableConventions.Designer.cs">
+      <DependentUpon>201701311027258_ModifiedOrderDetailsTableConventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311153225_AddedCountryTableAndModifiedOrderTable.cs" />
+    <Compile Include="Migrations\201701311153225_AddedCountryTableAndModifiedOrderTable.Designer.cs">
+      <DependentUpon>201701311153225_AddedCountryTableAndModifiedOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311155383_PopulatedCountryTable.cs" />
+    <Compile Include="Migrations\201701311155383_PopulatedCountryTable.Designer.cs">
+      <DependentUpon>201701311155383_PopulatedCountryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311205585_CountryTableDefaultConventions.cs" />
+    <Compile Include="Migrations\201701311205585_CountryTableDefaultConventions.Designer.cs">
+      <DependentUpon>201701311205585_CountryTableDefaultConventions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311212107_AddedCountryTable.cs" />
+    <Compile Include="Migrations\201701311212107_AddedCountryTable.Designer.cs">
+      <DependentUpon>201701311212107_AddedCountryTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311213388_PopulatedCountriesTable.cs" />
+    <Compile Include="Migrations\201701311213388_PopulatedCountriesTable.Designer.cs">
+      <DependentUpon>201701311213388_PopulatedCountriesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311216207_AddedCompanyInOrderTable.cs" />
+    <Compile Include="Migrations\201701311216207_AddedCompanyInOrderTable.Designer.cs">
+      <DependentUpon>201701311216207_AddedCompanyInOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311321326_ChangedUserNameTypeInOrderAndOrderDetailsTable.cs" />
+    <Compile Include="Migrations\201701311321326_ChangedUserNameTypeInOrderAndOrderDetailsTable.Designer.cs">
+      <DependentUpon>201701311321326_ChangedUserNameTypeInOrderAndOrderDetailsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311351076_RemovedUserNameFromOrderAndOrderDetailsTable.cs" />
+    <Compile Include="Migrations\201701311351076_RemovedUserNameFromOrderAndOrderDetailsTable.Designer.cs">
+      <DependentUpon>201701311351076_RemovedUserNameFromOrderAndOrderDetailsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311359496_ChangedUserNameConventionInOrderTable.cs" />
+    <Compile Include="Migrations\201701311359496_ChangedUserNameConventionInOrderTable.Designer.cs">
+      <DependentUpon>201701311359496_ChangedUserNameConventionInOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311401506_RemovedUserName.cs" />
+    <Compile Include="Migrations\201701311401506_RemovedUserName.Designer.cs">
+      <DependentUpon>201701311401506_RemovedUserName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311405142_AddedClientNameInOrderandOrderDetailsTable.cs" />
+    <Compile Include="Migrations\201701311405142_AddedClientNameInOrderandOrderDetailsTable.Designer.cs">
+      <DependentUpon>201701311405142_AddedClientNameInOrderandOrderDetailsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311532192_RemovedProductAndOrderDetailsRelationship.cs" />
+    <Compile Include="Migrations\201701311532192_RemovedProductAndOrderDetailsRelationship.Designer.cs">
+      <DependentUpon>201701311532192_RemovedProductAndOrderDetailsRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701311543207_AddedProductAndOrderDetailsRelationship.cs" />
+    <Compile Include="Migrations\201701311543207_AddedProductAndOrderDetailsRelationship.Designer.cs">
+      <DependentUpon>201701311543207_AddedProductAndOrderDetailsRelationship.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702020725032_AddedRequestQouteAndSalutationTables.cs" />
+    <Compile Include="Migrations\201702020725032_AddedRequestQouteAndSalutationTables.Designer.cs">
+      <DependentUpon>201702020725032_AddedRequestQouteAndSalutationTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702020727145_PopulatedSalutationTable.cs" />
+    <Compile Include="Migrations\201702020727145_PopulatedSalutationTable.Designer.cs">
+      <DependentUpon>201702020727145_PopulatedSalutationTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702020737243_AAddedMessageColumnInRequestQuoteTable.cs" />
+    <Compile Include="Migrations\201702020737243_AAddedMessageColumnInRequestQuoteTable.Designer.cs">
+      <DependentUpon>201702020737243_AAddedMessageColumnInRequestQuoteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702021040542_AAddedProductNameColumnInRequestQuoteTable.cs" />
+    <Compile Include="Migrations\201702021040542_AAddedProductNameColumnInRequestQuoteTable.Designer.cs">
+      <DependentUpon>201702021040542_AAddedProductNameColumnInRequestQuoteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702021058387_AddedProductIdColumnAndDeletedProductNameConventionInRequestQuoteTable.cs" />
+    <Compile Include="Migrations\201702021058387_AddedProductIdColumnAndDeletedProductNameConventionInRequestQuoteTable.Designer.cs">
+      <DependentUpon>201702021058387_AddedProductIdColumnAndDeletedProductNameConventionInRequestQuoteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702021100190_DeletedProductNameColumnInRequestQuoteTable.cs" />
+    <Compile Include="Migrations\201702021100190_DeletedProductNameColumnInRequestQuoteTable.Designer.cs">
+      <DependentUpon>201702021100190_DeletedProductNameColumnInRequestQuoteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702021205097_ChangedProductIdColumnConventionInRequestQuoteTable.cs" />
+    <Compile Include="Migrations\201702021205097_ChangedProductIdColumnConventionInRequestQuoteTable.Designer.cs">
+      <DependentUpon>201702021205097_ChangedProductIdColumnConventionInRequestQuoteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702021319186_ChangedProductIdColumnToIdInRequestQuoteTable.cs" />
+    <Compile Include="Migrations\201702021319186_ChangedProductIdColumnToIdInRequestQuoteTable.Designer.cs">
+      <DependentUpon>201702021319186_ChangedProductIdColumnToIdInRequestQuoteTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702031306466_AddedQuantityColumnInProductTable.cs" />
+    <Compile Include="Migrations\201702031306466_AddedQuantityColumnInProductTable.Designer.cs">
+      <DependentUpon>201702031306466_AddedQuantityColumnInProductTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702040832461_AddedOrderDetailRelationshipInOrdersTable.cs" />
+    <Compile Include="Migrations\201702040832461_AddedOrderDetailRelationshipInOrdersTable.Designer.cs">
+      <DependentUpon>201702040832461_AddedOrderDetailRelationshipInOrdersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702040922421_AddedProductRelationshipInOrdersTable.cs" />
+    <Compile Include="Migrations\201702040922421_AddedProductRelationshipInOrdersTable.Designer.cs">
+      <DependentUpon>201702040922421_AddedProductRelationshipInOrdersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702040934197_AddedProductIdInOrdersTable.cs" />
+    <Compile Include="Migrations\201702040934197_AddedProductIdInOrdersTable.Designer.cs">
+      <DependentUpon>201702040934197_AddedProductIdInOrdersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702040953376_AddedKeyInOrdersTable.cs" />
+    <Compile Include="Migrations\201702040953376_AddedKeyInOrdersTable.Designer.cs">
+      <DependentUpon>201702040953376_AddedKeyInOrdersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702041002150_AddedOrderIdInOrderDetailsTable.cs" />
+    <Compile Include="Migrations\201702041002150_AddedOrderIdInOrderDetailsTable.Designer.cs">
+      <DependentUpon>201702041002150_AddedOrderIdInOrderDetailsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702041016540_AddedOrderIdInOrderAndOrderDetailsTable.cs" />
+    <Compile Include="Migrations\201702041016540_AddedOrderIdInOrderAndOrderDetailsTable.Designer.cs">
+      <DependentUpon>201702041016540_AddedOrderIdInOrderAndOrderDetailsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702041041024_DeletedProductIdInOrderDetailsTable.cs" />
+    <Compile Include="Migrations\201702041041024_DeletedProductIdInOrderDetailsTable.Designer.cs">
+      <DependentUpon>201702041041024_DeletedProductIdInOrderDetailsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702041057579_AddedQuantityInOrderTable.cs" />
+    <Compile Include="Migrations\201702041057579_AddedQuantityInOrderTable.Designer.cs">
+      <DependentUpon>201702041057579_AddedQuantityInOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702060600454_AddedIsFeaturedColumnInProductTable.cs" />
+    <Compile Include="Migrations\201702060600454_AddedIsFeaturedColumnInProductTable.Designer.cs">
+      <DependentUpon>201702060600454_AddedIsFeaturedColumnInProductTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702060632560_OverrideStringConventionInProductTable.cs" />
+    <Compile Include="Migrations\201702060632560_OverrideStringConventionInProductTable.Designer.cs">
+      <DependentUpon>201702060632560_OverrideStringConventionInProductTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702061603547_AddedRequestserviceAndServiceTypeTables.cs" />
+    <Compile Include="Migrations\201702061603547_AddedRequestserviceAndServiceTypeTables.Designer.cs">
+      <DependentUpon>201702061603547_AddedRequestserviceAndServiceTypeTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702070927478_AddedIsCheckedColumnInServiceTypeTable.cs" />
+    <Compile Include="Migrations\201702070927478_AddedIsCheckedColumnInServiceTypeTable.Designer.cs">
+      <DependentUpon>201702070927478_AddedIsCheckedColumnInServiceTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702070929422_PopulatedServiceTypeTable.cs" />
+    <Compile Include="Migrations\201702070929422_PopulatedServiceTypeTable.Designer.cs">
+      <DependentUpon>201702070929422_PopulatedServiceTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071117083_ChangedServiceTypeConventionsTable.cs" />
+    <Compile Include="Migrations\201702071117083_ChangedServiceTypeConventionsTable.Designer.cs">
+      <DependentUpon>201702071117083_ChangedServiceTypeConventionsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071208298_AddedIsSelectedInServiceTypeTable.cs" />
+    <Compile Include="Migrations\201702071208298_AddedIsSelectedInServiceTypeTable.Designer.cs">
+      <DependentUpon>201702071208298_AddedIsSelectedInServiceTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071315529_RemovedServiceTypeInRequestServiceTable.cs" />
+    <Compile Include="Migrations\201702071315529_RemovedServiceTypeInRequestServiceTable.Designer.cs">
+      <DependentUpon>201702071315529_RemovedServiceTypeInRequestServiceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071316504_AddedServiceTypeInRequestServiceTable.cs" />
+    <Compile Include="Migrations\201702071316504_AddedServiceTypeInRequestServiceTable.Designer.cs">
+      <DependentUpon>201702071316504_AddedServiceTypeInRequestServiceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702071346042_RemovedQuantityColumnInRequestServiceTable.cs" />
+    <Compile Include="Migrations\201702071346042_RemovedQuantityColumnInRequestServiceTable.Designer.cs">
+      <DependentUpon>201702071346042_RemovedQuantityColumnInRequestServiceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702081613077_AddFistMiddleandLastNameColumnsInAppUserTable.cs" />
+    <Compile Include="Migrations\201702081613077_AddFistMiddleandLastNameColumnsInAppUserTable.Designer.cs">
+      <DependentUpon>201702081613077_AddFistMiddleandLastNameColumnsInAppUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702101217402_seedUsers.cs" />
+    <Compile Include="Migrations\201702101217402_seedUsers.Designer.cs">
+      <DependentUpon>201702101217402_seedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702151237161_AddedServiceTable.cs" />
+    <Compile Include="Migrations\201702151237161_AddedServiceTable.Designer.cs">
+      <DependentUpon>201702151237161_AddedServiceTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181332486_removedproductidinrequestservicetable.cs" />
+    <Compile Include="Migrations\201702181332486_removedproductidinrequestservicetable.Designer.cs">
+      <DependentUpon>201702181332486_removedproductidinrequestservicetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181334330_addedserviceidinrequestservicetable.cs" />
+    <Compile Include="Migrations\201702181334330_addedserviceidinrequestservicetable.Designer.cs">
+      <DependentUpon>201702181334330_addedserviceidinrequestservicetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181400553_addedservicesrltnshpinproductstable.cs" />
+    <Compile Include="Migrations\201702181400553_addedservicesrltnshpinproductstable.Designer.cs">
+      <DependentUpon>201702181400553_addedservicesrltnshpinproductstable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181424479_removedservicesrltnshpinproductstable.cs" />
+    <Compile Include="Migrations\201702181424479_removedservicesrltnshpinproductstable.Designer.cs">
+      <DependentUpon>201702181424479_removedservicesrltnshpinproductstable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181449360_addedservicenameinrequestservicestable.cs" />
+    <Compile Include="Migrations\201702181449360_addedservicenameinrequestservicestable.Designer.cs">
+      <DependentUpon>201702181449360_addedservicenameinrequestservicestable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181521575_changedserviceidtoidinservicestable.cs" />
+    <Compile Include="Migrations\201702181521575_changedserviceidtoidinservicestable.Designer.cs">
+      <DependentUpon>201702181521575_changedserviceidtoidinservicestable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181539231_changedserviceidtoidinrequestservicestable.cs" />
+    <Compile Include="Migrations\201702181539231_changedserviceidtoidinrequestservicestable.Designer.cs">
+      <DependentUpon>201702181539231_changedserviceidtoidinrequestservicestable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181613058_dropedserviceidandaddedidinrequestservicetable.cs" />
+    <Compile Include="Migrations\201702181613058_dropedserviceidandaddedidinrequestservicetable.Designer.cs">
+      <DependentUpon>201702181613058_dropedserviceidandaddedidinrequestservicetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181623164_changedserviceidtoservicesidinservicetable.cs" />
+    <Compile Include="Migrations\201702181623164_changedserviceidtoservicesidinservicetable.Designer.cs">
+      <DependentUpon>201702181623164_changedserviceidtoservicesidinservicetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181632379_addedarltnshpinrqstsrvctabltoservicetbl.cs" />
+    <Compile Include="Migrations\201702181632379_addedarltnshpinrqstsrvctabltoservicetbl.Designer.cs">
+      <DependentUpon>201702181632379_addedarltnshpinrqstsrvctabltoservicetbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181644383_ichangedserviceidtoidinrqstsvctbl.cs" />
+    <Compile Include="Migrations\201702181644383_ichangedserviceidtoidinrqstsvctbl.Designer.cs">
+      <DependentUpon>201702181644383_ichangedserviceidtoidinrqstsvctbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181649188_changeservicesinrqstsrvctbl.cs" />
+    <Compile Include="Migrations\201702181649188_changeservicesinrqstsrvctbl.Designer.cs">
+      <DependentUpon>201702181649188_changeservicesinrqstsrvctbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702220540263_addedminicategorytable.cs" />
+    <Compile Include="Migrations\201702220540263_addedminicategorytable.Designer.cs">
+      <DependentUpon>201702220540263_addedminicategorytable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702220546060_Removedtheminicategorytable.cs" />
+    <Compile Include="Migrations\201702220546060_Removedtheminicategorytable.Designer.cs">
+      <DependentUpon>201702220546060_Removedtheminicategorytable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702220548278_creatednewminicategorytable.cs" />
+    <Compile Include="Migrations\201702220548278_creatednewminicategorytable.Designer.cs">
+      <DependentUpon>201702220548278_creatednewminicategorytable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702220554184_addedsubcategorypivottable.cs" />
+    <Compile Include="Migrations\201702220554184_addedsubcategorypivottable.Designer.cs">
+      <DependentUpon>201702220554184_addedsubcategorypivottable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702220615219_addedservicecategorytable.cs" />
+    <Compile Include="Migrations\201702220615219_addedservicecategorytable.Designer.cs">
+      <DependentUpon>201702220615219_addedservicecategorytable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702220639135_addednewservicecategorypivottable.cs" />
+    <Compile Include="Migrations\201702220639135_addednewservicecategorypivottable.Designer.cs">
+      <DependentUpon>201702220639135_addednewservicecategorypivottable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702220921495_addedproductnameinproducttable.cs" />
+    <Compile Include="Migrations\201702220921495_addedproductnameinproducttable.Designer.cs">
+      <DependentUpon>201702220921495_addedproductnameinproducttable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702221254448_populateminicategorytable.cs" />
+    <Compile Include="Migrations\201702221254448_populateminicategorytable.Designer.cs">
+      <DependentUpon>201702221254448_populateminicategorytable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702231106592_addedminicategoryrltnshptoprdcttable.cs" />
+    <Compile Include="Migrations\201702231106592_addedminicategoryrltnshptoprdcttable.Designer.cs">
+      <DependentUpon>201702231106592_addedminicategoryrltnshptoprdcttable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702231324231_subcategoryrltnshptoprdcttable.cs" />
+    <Compile Include="Migrations\201702231324231_subcategoryrltnshptoprdcttable.Designer.cs">
+      <DependentUpon>201702231324231_subcategoryrltnshptoprdcttable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702231355297_removedsubcategoryrltnshpfrmprdcttable.cs" />
+    <Compile Include="Migrations\201702231355297_removedsubcategoryrltnshpfrmprdcttable.Designer.cs">
+      <DependentUpon>201702231355297_removedsubcategoryrltnshpfrmprdcttable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702231400550_CATEGORYRLTNSHPINMINICATEGORYTABLE.cs" />
+    <Compile Include="Migrations\201702231400550_CATEGORYRLTNSHPINMINICATEGORYTABLE.Designer.cs">
+      <DependentUpon>201702231400550_CATEGORYRLTNSHPINMINICATEGORYTABLE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702240611420_seedcategorytable.cs" />
+    <Compile Include="Migrations\201702240611420_seedcategorytable.Designer.cs">
+      <DependentUpon>201702240611420_seedcategorytable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702250832165_removedservicecategorypivottable.cs" />
+    <Compile Include="Migrations\201702250832165_removedservicecategorypivottable.Designer.cs">
+      <DependentUpon>201702250832165_removedservicecategorypivottable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702250858145_addservicecategoryrltnshptoservicetable.cs" />
+    <Compile Include="Migrations\201702250858145_addservicecategoryrltnshptoservicetable.Designer.cs">
+      <DependentUpon>201702250858145_addservicecategoryrltnshptoservicetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702270733172_removedrequiredonimagefieldinprdcttable.cs" />
+    <Compile Include="Migrations\201702270733172_removedrequiredonimagefieldinprdcttable.Designer.cs">
+      <DependentUpon>201702270733172_removedrequiredonimagefieldinprdcttable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702281909287_anypendingmigration.cs" />
+    <Compile Include="Migrations\201702281909287_anypendingmigration.Designer.cs">
+      <DependentUpon>201702281909287_anypendingmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703010726161_testdbmigration.cs" />
+    <Compile Include="Migrations\201703010726161_testdbmigration.Designer.cs">
+      <DependentUpon>201703010726161_testdbmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703020528442_seedingtableservices.cs" />
+    <Compile Include="Migrations\201703020528442_seedingtableservices.Designer.cs">
+      <DependentUpon>201703020528442_seedingtableservices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703020537423_seededcategoriesinservicecategoriestable.cs" />
+    <Compile Include="Migrations\201703020537423_seededcategoriesinservicecategoriestable.Designer.cs">
+      <DependentUpon>201703020537423_seededcategoriesinservicecategoriestable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\ExternalLoginConfirmationViewModel.cs" />
+    <Compile Include="Models\AddPhoneNumberViewModel.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\ConfigureTwoFactorViewModel.cs" />
+    <Compile Include="Models\ExternalLoginListViewModel.cs" />
+    <Compile Include="Models\FactorViewModel.cs" />
+    <Compile Include="Models\ForgotPasswordViewModel.cs" />
+    <Compile Include="Models\ForgotViewModel.cs" />
+    <Compile Include="Models\ManageLoginsViewModel.cs" />
+    <Compile Include="Models\IndexViewModel.cs" />
+    <Compile Include="Models\Minicategory.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\RequestQuote.cs" />
+    <Compile Include="Models\RequestService.cs" />
+    <Compile Include="Models\ResetPasswordViewModel.cs" />
+    <Compile Include="Models\RoleName.cs" />
+    <Compile Include="Models\Salutation.cs" />
+    <Compile Include="Models\SelectedTabAttribute.cs" />
+    <Compile Include="Models\SendCodeViewModel.cs" />
+    <Compile Include="Models\ServiceCategory.cs" />
+    <Compile Include="Models\Services.cs" />
+    <Compile Include="Models\ServiceType.cs" />
+    <Compile Include="Models\ServiceCategoryPivot.cs" />
+    <Compile Include="Models\SetPasswordViewModel.cs" />
+    <Compile Include="Models\Subcategory.cs" />
+    <Compile Include="Models\VerifyCodeViewModel.cs" />
+    <Compile Include="Models\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\OrderForm.cs" />
+    <Compile Include="ViewModels\ProductsForm.cs" />
+    <Compile Include="ViewModels\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\RequestQuoteForm.cs" />
+    <Compile Include="ViewModels\RequestServiceForm.cs" />
+    <Compile Include="ViewModels\ServiceViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCart.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\select.foundation.css" />
+    <Content Include="Content\DataTables\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\media-queries.css" />
+    <Content Include="Content\screen.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\styles.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\3.png" />
+    <Content Include="Images\accessories-thumb.png" />
+    <Content Include="Images\agar-and-petri-dishes-thumb.jpg" />
+    <Content Include="Images\air-filtration-thumb.png" />
+    <Content Include="Images\ats-thumb.png" />
+    <Content Include="Images\banner-pest.jpg" />
+    <Content Include="Images\banner.jpg" />
+    <Content Include="Images\banner05.jpg" />
+    <Content Include="Images\banner1.png" />
+    <Content Include="Images\bannerhome.jpg" />
+    <Content Include="Images\Beakers.jpg" />
+    <Content Include="Images\biobanner.jpg" />
+    <Content Include="Images\Biological-Safety-Cabinets-thumb.png" />
+    <Content Include="Images\blue-tile.jpg" />
+    <Content Include="Images\casework-thumb.png" />
+    <Content Include="Images\centrifuge-thumb.png" />
+    <Content Include="Images\checkout-logo-medium.png" />
+    <Content Include="Images\dissectiontools.jpg" />
+    <Content Include="Images\distillation-equipment.jpg" />
+    <Content Include="Images\electricity.jpg" />
+    <Content Include="Images\fume-hood-thumb.png" />
+    <Content Include="Images\grandlab.png" />
+    <Content Include="Images\grandlabdigitalfexrslogo.png" />
+    <Content Include="Images\grandlabdigitalfexrslogoicon.png" />
+    <Content Include="Images\hk--cp100wx-left.jpg" />
+    <Content Include="Images\hk-cp90wx-left.jpg" />
+    <Content Include="Images\hk-cr22n-left.jpg" />
+    <Content Include="Images\hk-cs150fnx-left_1.jpg" />
+    <Content Include="Images\hk-cs150nx-top_3.jpg" />
+    <Content Include="Images\homepage-banner.jpg" />
+    <Content Include="Images\icon.png" />
+    <Content Include="Images\icon_sprite.png" />
+    <Content Include="Images\incubator-thumb_1.png" />
+    <Content Include="Images\isolator-thumb.png" />
+    <Content Include="Images\lab.jpg" />
+    <Content Include="Images\laminar-airflow-thumb.png" />
+    <Content Include="Images\life-science.jpg" />
+    <Content Include="Images\light-and-optics.jpg" />
+    <Content Include="Images\magnets.jpg" />
+    <Content Include="Images\measurement-equipment.jpg" />
+    <Content Include="Images\nu-1590_image_coming_soon_1_1_1_1_1.jpg" />
+    <Content Include="Images\nu-2500v-top-open.jpg" />
+    <Content Include="Images\nu-400-187_base_1_2_1_1_1.jpg" />
+    <Content Include="Images\nu-543-400-base-vfc_3.jpg" />
+    <Content Include="Images\nu-c200r-right-closing-user.jpg" />
+    <Content Include="Images\nu-c200v-right-closing-user.jpg" />
+    <Content Include="Images\nu-c2500r-straight-open.jpg" />
+    <Content Include="Images\nu-mlx-104-left_2.jpg" />
+    <Content Include="Images\nu-mlx-106-front-microtube-rotor_1.jpg" />
+    <Content Include="Images\nu-mlx-106-left_1.jpg" />
+    <Content Include="Images\organic-equipment.jpg" />
+    <Content Include="Images\parts-thumb.png" />
+    <Content Include="Images\PEST-control-temp-banner.jpg" />
+    <Content Include="Images\pestcntrlbannerlogo.jpg" />
+    <Content Include="Images\pestcontrlbanner.jpg" />
+    <Content Include="Images\Pestcontrolbanner.jpg" />
+    <Content Include="Images\pp-acceptance-medium.png" />
+    <Content Include="Images\pyrex-thumb.jpg" />
+    <Content Include="Images\ringstandequipment.jpg" />
+    <Content Include="Images\select-arrow.png" />
+    <Content Include="Images\site-logo.png" />
+    <Content Include="Images\slide3.jpg" />
+    <Content Include="Images\stoppers.jpg" />
+    <Content Include="Images\thermometers.jpg" />
+    <Content Include="Images\ult-thumb.png" />
+    <Content Include="Reports\SupportReports\GrandlabProducts.sln" />
+    <Content Include="Reports\SupportReports\SupportReports\Alltickets.rds" />
+    <Content Include="Reports\SupportReports\SupportReports\bin\Debug\Alltickets.rds" />
+    <Content Include="Reports\SupportReports\SupportReports\bin\Debug\build.obj" />
+    <Content Include="Reports\SupportReports\SupportReports\GrandlabProducts.rptproj.user" />
+    <Content Include="Scripts\bootbox.js" />
+    <Content Include="Scripts\bootbox.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\css.css" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="Reports\SupportReports\SupportReports\bin\Debug\GrandLabProducts.rdl" />
+    <Content Include="Reports\SupportReports\SupportReports\GrandLabProducts.rdl" />
+    <Content Include="Reports\SupportReports\SupportReports\GrandLabProducts.rdl.data" />
+    <Content Include="Reports\SupportReports\SupportReports\GrandlabProducts.rptproj" />
+    <Content Include="Reports\SupportReports\SupportReports\PriceQuotations.rdl" />
+    <Content Include="Reports\SupportReports\SupportReports\PriceQuotations.rdl.data" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\global.js" />
+    <Content Include="Scripts\imagesloaded.pkgd.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.appear.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\responsive.js" />
+    <Content Include="Scripts\responsiveslides.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Products\ProductForm.cshtml" />
+    <Content Include="Views\Products\BiologyLab.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\Products\SalesDashboard.cshtml" />
+    <Content Include="Views\Shared\_sidebar.cshtml" />
+    <Content Include="Views\Shared\_salesdashboardsidebar.cshtml" />
+    <Content Include="Views\ShoppingCart\checkout.cshtml" />
+    <Content Include="Views\ShoppingCart\_sidebar.cshtml" />
+    <Content Include="Views\ShoppingCart\RequestQuote.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Orders.cshtml" />
+    <Content Include="Views\Products\ProductQuotes.cshtml" />
+    <Content Include="Views\ShoppingCart\RequestService.cshtml" />
+    <Content Include="Views\Products\ServiceRequests.cshtml" />
+    <Content Include="Views\Products\productdetails.cshtml" />
+    <Content Include="Views\Products\MyServiceRequests.cshtml" />
+    <Content Include="Views\Products\MyQuotations.cshtml" />
+    <Content Include="Views\Products\ProductView.cshtml" />
+    <Content Include="Views\ShoppingCart\ServiceView.cshtml" />
+    <Content Include="Views\ShoppingCart\QuotationView.cshtml" />
+    <Content Include="Views\Products\ServiceForm.cshtml" />
+    <Content Include="Views\Home\Service.cshtml" />
+    <Content Include="Views\Products\AllServices.cshtml" />
+    <Content Include="Views\Products\ServiceView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\SupportReports\.vs\GrandlabProducts\v14\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612180931012_InitialCreate.resx">
+      <DependentUpon>201612180931012_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612271221239_CreateProductTable.resx">
+      <DependentUpon>201612271221239_CreateProductTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701030918494_AddedProductPrice.resx">
+      <DependentUpon>201701030918494_AddedProductPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701060947567_OverrideConventionsForProductsAndOrders.resx">
+      <DependentUpon>201701060947567_OverrideConventionsForProductsAndOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701060955127_RemovedClientFromProductsToOrders.resx">
+      <DependentUpon>201701060955127_RemovedClientFromProductsToOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701061433575_AddedImageAndChangedPriceTypeInPeoducts.resx">
+      <DependentUpon>201701061433575_AddedImageAndChangedPriceTypeInPeoducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701070705218_AddedPriceInProducts.resx">
+      <DependentUpon>201701070705218_AddedPriceInProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181126118_AddedCategoryTable.resx">
+      <DependentUpon>201701181126118_AddedCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181133046_OverrideConventionsOfCategory.resx">
+      <DependentUpon>201701181133046_OverrideConventionsOfCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181145227_PopulateCategoryTable.resx">
+      <DependentUpon>201701181145227_PopulateCategoryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701181218268_OverrideImageConventions.resx">
+      <DependentUpon>201701181218268_OverrideImageConventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701240601518_AddedCartTable.resx">
+      <DependentUpon>201701240601518_AddedCartTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701280831247_addedcartinproducttable.resx">
+      <DependentUpon>201701280831247_addedcartinproducttable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701310953223_AddedOrderDetailTableAndModifiedOrderTableConventions.resx">
+      <DependentUpon>201701310953223_AddedOrderDetailTableAndModifiedOrderTableConventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311027258_ModifiedOrderDetailsTableConventions.resx">
+      <DependentUpon>201701311027258_ModifiedOrderDetailsTableConventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311153225_AddedCountryTableAndModifiedOrderTable.resx">
+      <DependentUpon>201701311153225_AddedCountryTableAndModifiedOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311155383_PopulatedCountryTable.resx">
+      <DependentUpon>201701311155383_PopulatedCountryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311205585_CountryTableDefaultConventions.resx">
+      <DependentUpon>201701311205585_CountryTableDefaultConventions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311212107_AddedCountryTable.resx">
+      <DependentUpon>201701311212107_AddedCountryTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311213388_PopulatedCountriesTable.resx">
+      <DependentUpon>201701311213388_PopulatedCountriesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311216207_AddedCompanyInOrderTable.resx">
+      <DependentUpon>201701311216207_AddedCompanyInOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311321326_ChangedUserNameTypeInOrderAndOrderDetailsTable.resx">
+      <DependentUpon>201701311321326_ChangedUserNameTypeInOrderAndOrderDetailsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311351076_RemovedUserNameFromOrderAndOrderDetailsTable.resx">
+      <DependentUpon>201701311351076_RemovedUserNameFromOrderAndOrderDetailsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311359496_ChangedUserNameConventionInOrderTable.resx">
+      <DependentUpon>201701311359496_ChangedUserNameConventionInOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311401506_RemovedUserName.resx">
+      <DependentUpon>201701311401506_RemovedUserName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311405142_AddedClientNameInOrderandOrderDetailsTable.resx">
+      <DependentUpon>201701311405142_AddedClientNameInOrderandOrderDetailsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311532192_RemovedProductAndOrderDetailsRelationship.resx">
+      <DependentUpon>201701311532192_RemovedProductAndOrderDetailsRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701311543207_AddedProductAndOrderDetailsRelationship.resx">
+      <DependentUpon>201701311543207_AddedProductAndOrderDetailsRelationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702020725032_AddedRequestQouteAndSalutationTables.resx">
+      <DependentUpon>201702020725032_AddedRequestQouteAndSalutationTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702020727145_PopulatedSalutationTable.resx">
+      <DependentUpon>201702020727145_PopulatedSalutationTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702020737243_AAddedMessageColumnInRequestQuoteTable.resx">
+      <DependentUpon>201702020737243_AAddedMessageColumnInRequestQuoteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702021040542_AAddedProductNameColumnInRequestQuoteTable.resx">
+      <DependentUpon>201702021040542_AAddedProductNameColumnInRequestQuoteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702021058387_AddedProductIdColumnAndDeletedProductNameConventionInRequestQuoteTable.resx">
+      <DependentUpon>201702021058387_AddedProductIdColumnAndDeletedProductNameConventionInRequestQuoteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702021100190_DeletedProductNameColumnInRequestQuoteTable.resx">
+      <DependentUpon>201702021100190_DeletedProductNameColumnInRequestQuoteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702021205097_ChangedProductIdColumnConventionInRequestQuoteTable.resx">
+      <DependentUpon>201702021205097_ChangedProductIdColumnConventionInRequestQuoteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702021319186_ChangedProductIdColumnToIdInRequestQuoteTable.resx">
+      <DependentUpon>201702021319186_ChangedProductIdColumnToIdInRequestQuoteTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702031306466_AddedQuantityColumnInProductTable.resx">
+      <DependentUpon>201702031306466_AddedQuantityColumnInProductTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702040832461_AddedOrderDetailRelationshipInOrdersTable.resx">
+      <DependentUpon>201702040832461_AddedOrderDetailRelationshipInOrdersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702040922421_AddedProductRelationshipInOrdersTable.resx">
+      <DependentUpon>201702040922421_AddedProductRelationshipInOrdersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702040934197_AddedProductIdInOrdersTable.resx">
+      <DependentUpon>201702040934197_AddedProductIdInOrdersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702040953376_AddedKeyInOrdersTable.resx">
+      <DependentUpon>201702040953376_AddedKeyInOrdersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702041002150_AddedOrderIdInOrderDetailsTable.resx">
+      <DependentUpon>201702041002150_AddedOrderIdInOrderDetailsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702041016540_AddedOrderIdInOrderAndOrderDetailsTable.resx">
+      <DependentUpon>201702041016540_AddedOrderIdInOrderAndOrderDetailsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702041041024_DeletedProductIdInOrderDetailsTable.resx">
+      <DependentUpon>201702041041024_DeletedProductIdInOrderDetailsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702041057579_AddedQuantityInOrderTable.resx">
+      <DependentUpon>201702041057579_AddedQuantityInOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702060600454_AddedIsFeaturedColumnInProductTable.resx">
+      <DependentUpon>201702060600454_AddedIsFeaturedColumnInProductTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702060632560_OverrideStringConventionInProductTable.resx">
+      <DependentUpon>201702060632560_OverrideStringConventionInProductTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702061603547_AddedRequestserviceAndServiceTypeTables.resx">
+      <DependentUpon>201702061603547_AddedRequestserviceAndServiceTypeTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702070927478_AddedIsCheckedColumnInServiceTypeTable.resx">
+      <DependentUpon>201702070927478_AddedIsCheckedColumnInServiceTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702070929422_PopulatedServiceTypeTable.resx">
+      <DependentUpon>201702070929422_PopulatedServiceTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071117083_ChangedServiceTypeConventionsTable.resx">
+      <DependentUpon>201702071117083_ChangedServiceTypeConventionsTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071208298_AddedIsSelectedInServiceTypeTable.resx">
+      <DependentUpon>201702071208298_AddedIsSelectedInServiceTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071315529_RemovedServiceTypeInRequestServiceTable.resx">
+      <DependentUpon>201702071315529_RemovedServiceTypeInRequestServiceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071316504_AddedServiceTypeInRequestServiceTable.resx">
+      <DependentUpon>201702071316504_AddedServiceTypeInRequestServiceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702071346042_RemovedQuantityColumnInRequestServiceTable.resx">
+      <DependentUpon>201702071346042_RemovedQuantityColumnInRequestServiceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702081613077_AddFistMiddleandLastNameColumnsInAppUserTable.resx">
+      <DependentUpon>201702081613077_AddFistMiddleandLastNameColumnsInAppUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702101217402_seedUsers.resx">
+      <DependentUpon>201702101217402_seedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702151237161_AddedServiceTable.resx">
+      <DependentUpon>201702151237161_AddedServiceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181332486_removedproductidinrequestservicetable.resx">
+      <DependentUpon>201702181332486_removedproductidinrequestservicetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181334330_addedserviceidinrequestservicetable.resx">
+      <DependentUpon>201702181334330_addedserviceidinrequestservicetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181400553_addedservicesrltnshpinproductstable.resx">
+      <DependentUpon>201702181400553_addedservicesrltnshpinproductstable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181424479_removedservicesrltnshpinproductstable.resx">
+      <DependentUpon>201702181424479_removedservicesrltnshpinproductstable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181449360_addedservicenameinrequestservicestable.resx">
+      <DependentUpon>201702181449360_addedservicenameinrequestservicestable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181521575_changedserviceidtoidinservicestable.resx">
+      <DependentUpon>201702181521575_changedserviceidtoidinservicestable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181539231_changedserviceidtoidinrequestservicestable.resx">
+      <DependentUpon>201702181539231_changedserviceidtoidinrequestservicestable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181613058_dropedserviceidandaddedidinrequestservicetable.resx">
+      <DependentUpon>201702181613058_dropedserviceidandaddedidinrequestservicetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181623164_changedserviceidtoservicesidinservicetable.resx">
+      <DependentUpon>201702181623164_changedserviceidtoservicesidinservicetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181632379_addedarltnshpinrqstsrvctabltoservicetbl.resx">
+      <DependentUpon>201702181632379_addedarltnshpinrqstsrvctabltoservicetbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181644383_ichangedserviceidtoidinrqstsvctbl.resx">
+      <DependentUpon>201702181644383_ichangedserviceidtoidinrqstsvctbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181649188_changeservicesinrqstsrvctbl.resx">
+      <DependentUpon>201702181649188_changeservicesinrqstsrvctbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702220540263_addedminicategorytable.resx">
+      <DependentUpon>201702220540263_addedminicategorytable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702220546060_Removedtheminicategorytable.resx">
+      <DependentUpon>201702220546060_Removedtheminicategorytable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702220548278_creatednewminicategorytable.resx">
+      <DependentUpon>201702220548278_creatednewminicategorytable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702220554184_addedsubcategorypivottable.resx">
+      <DependentUpon>201702220554184_addedsubcategorypivottable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702220615219_addedservicecategorytable.resx">
+      <DependentUpon>201702220615219_addedservicecategorytable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702220639135_addednewservicecategorypivottable.resx">
+      <DependentUpon>201702220639135_addednewservicecategorypivottable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702220921495_addedproductnameinproducttable.resx">
+      <DependentUpon>201702220921495_addedproductnameinproducttable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702221254448_populateminicategorytable.resx">
+      <DependentUpon>201702221254448_populateminicategorytable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702231106592_addedminicategoryrltnshptoprdcttable.resx">
+      <DependentUpon>201702231106592_addedminicategoryrltnshptoprdcttable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702231324231_subcategoryrltnshptoprdcttable.resx">
+      <DependentUpon>201702231324231_subcategoryrltnshptoprdcttable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702231355297_removedsubcategoryrltnshpfrmprdcttable.resx">
+      <DependentUpon>201702231355297_removedsubcategoryrltnshpfrmprdcttable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702231400550_CATEGORYRLTNSHPINMINICATEGORYTABLE.resx">
+      <DependentUpon>201702231400550_CATEGORYRLTNSHPINMINICATEGORYTABLE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702240611420_seedcategorytable.resx">
+      <DependentUpon>201702240611420_seedcategorytable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702250832165_removedservicecategorypivottable.resx">
+      <DependentUpon>201702250832165_removedservicecategorypivottable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702250858145_addservicecategoryrltnshptoservicetable.resx">
+      <DependentUpon>201702250858145_addservicecategoryrltnshptoservicetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702270733172_removedrequiredonimagefieldinprdcttable.resx">
+      <DependentUpon>201702270733172_removedrequiredonimagefieldinprdcttable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702281909287_anypendingmigration.resx">
+      <DependentUpon>201702281909287_anypendingmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703010726161_testdbmigration.resx">
+      <DependentUpon>201703010726161_testdbmigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703020528442_seedingtableservices.resx">
+      <DependentUpon>201703020528442_seedingtableservices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703020537423_seededcategoriesinservicecategoriestable.resx">
+      <DependentUpon>201703020537423_seededcategoriesinservicecategoriestable.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56172</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:56172/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

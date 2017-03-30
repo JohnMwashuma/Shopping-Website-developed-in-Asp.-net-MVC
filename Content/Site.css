@@ -1,0 +1,52 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+span.field-validation-error {
+    margin: 5px 0 0;
+    color: #df280a;
+    font-size: 13px;
+    border-color: #df280a;
+}
+a.product-name.display-block.work-medium.h5 {
+    font-size: 20px;
+ font-family: "Work Sans",Helvetica Neue, Helvetica, Arial, sans-serif;}
+h1.title.relative.z-index-2 {
+    font-size: 40px;
+    font-family: "Work Sans",Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+footer, .footer-padding {
+    padding-left: 10px;
+}
+.category-description {
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccdddf;
+}
+
+
+/*Bootstrap Overrides*/
+
+.container {
+    max-width: 1267px;
+}

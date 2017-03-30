@@ -1,0 +1,106 @@
+﻿@model GrandLabFixers.ViewModels.ProductsForm
+
+@{
+    ViewBag.Title = Model.Heading;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="site-width">
+        </div>
+        <div class="clearfix site-width">
+            @Html.Partial("_salesdashboardsidebar")
+            <div class="col-main">
+                <div class="my-account">
+                    <div class="dashboard">
+                        <div class="page-title">
+                            <h1>@Model.Heading</h1>
+                            <p class="text-success">@ViewBag.StatusMessage</p>
+                        </div>
+                        <div class="product-view">
+                            <div class="product-img-box right two-column tablet-one-column">
+                                <div class="product-image product-image-zoom">
+                                    <div class="product-image-gallery">
+
+                                        @{
+                                        var base64 = Convert.ToBase64String(@Model.Image);
+                                        var imgSrc = String.Format("data:~/Images;base64,{0}", base64);
+                                        }
+                                        <label>Product Image</label><br />
+                                        <img id="image-main" class="gallery-image visible max-image" src="@imgSrc" alt="@Model.Name" title="@Model.Name">
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+                            <div class="product-shop left two-column tablet-one-column">
+                                <div class="form-group">
+                                    <label>Product Name</label><br/>
+
+                                    @Html.DisplayFor(m => m.Name, new {@class = "form-control", @placeholder = "Product Name"})
+                                </div>
+                                <div class="form-group">
+                                    <label>Product Price</label><br/>
+                                    @Html.DisplayFor(m => m.Price, new {@class = "form-control", @placeholder = "Item Price with no currency symbols"})
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Product Quantity</label><br/>
+                                    @Html.DisplayFor(m => m.Quantity, new {@class = "form-control", @placeholder = "Number of Item In Stock"})
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Product Category</label><br/>
+
+                                    @Html.DisplayFor(c => c.CategoryName.Name)
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Is the Product featured on the Home Page?</label><br/>
+                                    @if (Model.IsFeatured == true)
+                                    {
+                                        <p>This product is featured on the home page.</p>
+                                    }
+                                    else
+                                    {
+                                        <p>This product is not featured on the home page.</p>
+                                    }
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Details</label><br/>
+                                    @Html.DisplayFor(m => m.Details, new {@class = "form-required", @placeholder = "Product Description in details.", @rows = "5", @cols = "70"})
+                                </div>
+
+
+
+                                <div class="pull-left">
+                                    <p class="back-link-btn"><a href="@Url.Action("Index", "Products")"><small>« </small>Back</a>
+                                    </p>
+
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                </div>                        <div class="std"></div>
+            </div>
+            <div class="col-left sidebar"></div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNet.Identity
+@model GrandLabFixers.Models.IndexViewModel
+@{
+    ViewBag.Title = "Sales Dashboard";
+}
+
+
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="site-width">
+        </div>
+        <div class="clearfix site-width">
+            @Html.Partial("_salesdashboardsidebar")
+            <div class="col-main">
+                <div class="my-account">
+                    <div class="dashboard">
+                        <div class="page-title">
+                            <h1>Sales Dashboard</h1>
+                            <p class="text-success">@ViewBag.StatusMessage</p>
+                        </div>
+                        <div class="welcome-msg">
+                            <p class="hello"><strong>Hello, @Model.FirstName @Model.LastName!</strong></p>
+                            <p>From your My Account Dashboard you have the ability to view all the products price quatation and service requests and also manage this information.</p>
+                        </div>
+                        
+                 
+                    </div>
+                </div>                        <div class="std"></div>
+            </div>
+            <div class="col-left sidebar"></div>
+        </div>
+    </div>
+</div>

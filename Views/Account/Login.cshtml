@@ -1,0 +1,85 @@
+﻿@using GrandLabFixers.Models
+@model GrandLabFixers.ViewModels.LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+
+<div class="main-container col1-layout">
+    <div class="main">
+        <div class="site-width">
+        </div>
+        <div class="col-main relative no-side-content">
+            <div class="inner site-width">
+                <div class="account-login">
+                    <div class="page-title">
+                        <h1> Login or Create an Account </h1>
+                    </div>
+                    @using (Html.BeginForm("Login", "Account", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+                    {
+                        @Html.AntiForgeryToken()
+                       <div class="col2-set">
+                            <div class="col-1 new-users">
+                                <div class="content">
+                                    <h2>New Here?</h2>
+                                    <p class="form-instructions">Registration is free and easy!</p>
+                                    <ul class="benefits">
+                                        <li>Faster Price Quotation Requesting</li>
+                                        <li>Manage your Account Info</li>
+                                        <li>View and track orders and more</li>
+                                    </ul>
+                                </div>
+                                <div class="buttons-set">
+                                    <a title="Create an Account" class="button" href="@Url.Action("Register")"><span><span>Create an Account</span></span></a>
+                                </div>
+                            </div>
+                            <div class="col-2 registered-users">
+                                <div class="content fieldset">
+                                    <h2>Already registered?</h2>
+                                    <p class="form-instructions">If you have an account with us, please log in.</p>
+                                    <p class="required">* Required Fields</p>
+                                    <ul class="form-list">
+                                        <li>
+                                            <label class="required"><em>*</em>Email Address</label>
+                                            <div class="input-box">
+                                                @Html.TextBoxFor(m => m.Email, new { @class = "input-text required-entry validate-email", @type = "email", @autocapitalize = "off", @autocorrect = "off", @spellcheck = "false", @name = "login[username]", @id = "email", @title = "Email Address" })
+                                                @Html.ValidationMessageFor(m => m.Email)
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <label class="required"><em>*</em>Password</label>
+                                            <div class="input-box">
+                                                @Html.PasswordFor(m => m.Password, new { @class = "input-text required-entry validate-password", @type = "password", @name = "login[password]", @id = "pass", @title = "Password" })
+                                                @Html.ValidationMessageFor(m => m.Password)
+                                            </div>
+                                        </li>
+                                        <li>
+                <a href="@Url.Action("ForgotPassword")" class="f-left">Forgot Your Password?</a>
+            </li>
+                                    </ul>
+                                   
+                                </div>
+                                <div class="buttons-set">
+                                    <button type="submit" class="button" title="Login" name="send" id="send2" pb-role="submit"><span><span>Login</span></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <script type="text/javascript">
+    //<![CDATA[
+        var dataForm = new VarienForm('login-form', true);
+    //]]>
+                    </script>
+                </div>
+                <div class="std"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,144 @@
+﻿@model GrandLabFixers.ViewModels.RequestQuoteForm
+
+@{
+    ViewBag.Title = "Request Quote";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+@*@{
+    var prod = @ViewData["MyProduct"];
+}*@
+@*@{
+    //var productId = Request.Url.Segments[3];
+    int productId = Convert.ToInt32(HttpContext.Current.Request.Url.Segments[3]);
+}*@
+
+<div class="clearfix site-width">
+    <div class="col-main">
+        <div class="page-title">
+            <h2>Request Quote</h2>
+        </div>
+
+        @using (Html.BeginForm("CreateQoute", "ShoppingCart", FormMethod.Post))
+        {
+
+            @Html.AntiForgeryToken()
+            <ol class="opc opc-firststep-billing collpse" id="checkoutSteps" role="tablist" aria-multiselectable="true">
+
+
+                <div class="field">
+                    <label>Salutation</label>
+
+                    @Html.DropDownListFor(m => m.Salutation, new SelectList(Model.Salutations, "Id", "Name"), "--Select Salutation--", new { @class = "input-text required-entry", @type = "text" })
+                    @Html.ValidationMessageFor(m => m.Salutations)
+                </div>
+
+                <div class="field">
+                    <label class="form-required" for="first_name">First Name</label>
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "input-text required-entry", @placeholder = "First Name", @type = "text", @title = "First Name", @maxlength = "255" })
+                    @Html.ValidationMessageFor(m => m.FirstName)
+                </div>
+                <div class="field">
+                    <label class="form-required" for="last_name">Last Name</label>
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "input-text required-entry", @placeholder = "Last Name", @type = "text", @title = "Last Name", @maxlength = "255" })
+                    @Html.ValidationMessageFor(m => m.LastName)
+                </div>
+
+                <div class="fields clearfix">
+                    <div class="field">
+                        <label class="form-required" for="institution">Company</label>
+                        @Html.TextBoxFor(m => m.Company, new { @class = "input-text required-entry", @size = "30", @maxlength = "30", @placeholder = "Company Name", @type = "text", @title = "Company Name" })
+                        @Html.ValidationMessageFor(m => m.Company)
+
+                    </div>
+                    <div class="field">
+                        <label class="form-required" for="department">Department</label>
+                        @Html.TextBoxFor(m => m.Department, new { @class = "input-text required-entry", @size = "30", @maxlength = "30", @placeholder = "Department Name", @type = "text", @title = "Department Name" })
+                        @Html.ValidationMessageFor(m => m.Department)
+                    </div>
+                </div>
+
+                <div class="fields clearfix">
+                    <div class="field">
+                        <label class="form-required" for="email">Email Address</label>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "input-text required-entry", @size = "30", @maxlength = "30", @placeholder = "Email Address", @type = "text", @title = "Email Address" })
+                        @Html.ValidationMessageFor(m => m.Email)
+
+
+                    </div>
+                    <div class="field">
+                        <label class="form-required" for="phone">Phone Number</label>
+                        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "input-text required-entry", @size = "30", @maxlength = "30", @placeholder = "Phone Number", @type = "text", @title = "Phone Number" })
+                        @Html.ValidationMessageFor(m => m.PhoneNumber)
+
+
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="form-required" for="street">Address</label>
+                    @Html.TextBoxFor(m => m.Address, new { @class = "input-text required-entry", @size = "30", @maxlength = "100", @placeholder = "Address", @type = "text", @title = "Address" })
+                    @Html.ValidationMessageFor(m => m.Address)
+
+
+                </div>
+
+                <div class="fields clearfix">
+                    <div class="field">
+                        <label class="form-required" for="city">City</label>
+                        @Html.TextBoxFor(m => m.City, new { @class = "input-text required-entry", @size = "30", @maxlength = "100", @placeholder = "City Name", @type = "text", @title = "City" })
+                        @Html.ValidationMessageFor(m => m.City)
+
+
+
+
+                    </div>
+                    <div class="field">
+                        <label for="zip">Postal Code</label>
+                        @Html.TextBoxFor(m => m.PostalCode, new { @class = "input-text required-entry", @size = "10", @maxlength = "10", @placeholder = "Postal Code", @type = "text", @id = "zipe", @title = "Postal Code" })
+                        @Html.ValidationMessageFor(m => m.PostalCode)
+
+
+                    </div>
+                </div>
+
+
+
+                <!-- Updated 03/05/2015 -->
+                <label class="form-required" for="country">Country</label>
+                <!--<input type="text" required id="country" name="country" size="30" maxlength="100"/>-->
+                @Html.DropDownListFor(m => m.Country, new SelectList(Model.Countries, "Id", "Name"), "--Select Country--", new { @class = "input-text required-entry", @type = "text", @id = "Country" })
+                @Html.ValidationMessageFor(m => m.Countries)
+
+                <br>
+                <br />
+                <!-- Updated 10/02/2015 -->
+
+                <label class="form-required" for="message">Message</label>
+
+                @Html.TextAreaFor(m => m.Message, new { @class = "input-text required-entry", @rows = "5", @cols = "70", @placeholder = "How soon do you need the product?" })
+                @Html.ValidationMessageFor(m => m.Message)
+
+
+                <br>
+                <br/>
+                <div class="buttons-set">
+                    <button type="submit" title="Save" class="button-btn" pb-role="submit"><span><span>Save</span></span></button>
+                    <p class="back-link-btn"><a href="@Url.Action("Index", "Home")"><small>« </small>Back</a></p>
+
+                </div>
+
+                @*<input type="submit" value="Submit" class="button green">*@
+
+
+            </ol>
+
+        }
+        <div class="std"></div>
+    </div>
+
+    @Html.Partial("_sidebar")
+
+</div>

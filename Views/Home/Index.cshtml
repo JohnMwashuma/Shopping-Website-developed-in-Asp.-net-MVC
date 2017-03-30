@@ -1,0 +1,673 @@
+﻿@using GrandLabFixers.Models
+@model IEnumerable<GrandLabFixers.Models.Product>
+@{
+    ViewBag.Title = "GrandLab";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="main-container col2-left-layout">
+    <div class="main">
+
+        <div class="cms-page-banner text-center background-cover relative has-image" style="background-image:url(/Images/lab.jpg);">
+            <div class="overlay absolute full z-index-1"></div>
+            <h1 class="title relative z-index-2">
+         
+              GrandLab Digital Fixers Ltd Products
+            </h1>
+        </div>
+
+        <div class="clearfix site-width">
+            <div class="col-left sidebar col-left-first">
+                <div class="block block-layered-nav block-layered-nav--no-filters">
+                    <div class="block-title">
+                        <strong><span>Filter By</span></strong>
+                    </div>
+                    <div class="block-content toggle-content">
+                        <p class="block-subtitle block-subtitle--filter">Filter</p>
+                        <dl id="narrow-by-list">
+                            <dt class="odd">Biology</dt>
+                            <dd class="odd">
+                                <ol>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Dissection Tools" })">
+                                            Dissection Tools
+                                            @if (@ViewBag.Dissection == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Dissection)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Life Science" })">
+                                            Life Science
+                                            @if (@ViewBag.LifeScience == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.LifeScience)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Agar, Petri Dishes, And Bacteria" })">
+                                            Agar, Petri Dishes, And Bacteria
+                                            @if (@ViewBag.Bacteria == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Bacteria)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                            <dt class="even">Chemistry</dt>
+                            <dd class="even">
+                                <ol>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Ring Stands, Clamps and Supports" })">
+                                            Ring Stands, Clamps and Supports
+                                            @if (@ViewBag.RingStands == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.RingStands)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Thermometers" })">
+                                            Thermometers
+                                            @if (@ViewBag.Thermometers == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Thermometers)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Distillation Glassware and Equipment" })">
+                                            Distillation Glassware Equipment
+                                            @if (@ViewBag.Distillation == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Distillation)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Organic Chemistry Equipment" })">
+                                            Organic Chemistry Equipment
+                                            @if (@ViewBag.OrganicChemistry == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.OrganicChemistry)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Models and Periodic Tables" })">
+                                            Models and Periodic Tables
+                                            @if (@ViewBag.PeriodicTables == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.PeriodicTables)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Glass and Rubber Tubing" })">
+                                            Glass and Rubber Tubing
+                                            @if (@ViewBag.GlassandRubber == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.GlassandRubber)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Stoppers and Corks" })">
+                                            Stoppers and Corks
+                                            @if (@ViewBag.Stoppers == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Stoppers)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Beakers" })">
+                                            Beakers
+                                            @if (@ViewBag.Beakers == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Beakers)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Flasks" })">
+                                            Flasks
+                                            @if (@ViewBag.Flasks == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Flasks)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Graduated Cylinders" })">
+                                            Graduated Cylinders
+                                            @if (@ViewBag.Cylinders == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Cylinders)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Pyrex Lab Glassware" })">
+                                            Pyrex Lab Glassware
+                                            @if (@ViewBag.LabGlassware == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.LabGlassware)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Test Tubes" })">
+                                            Test Tubes
+                                            @if (@ViewBag.TestTubes == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.TestTubes)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Funnels"})">
+                                            Funnels
+                                            @if (@ViewBag.Funnels == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Funnels)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Burettes" })">
+                                            Burettes
+                                            @if (@ViewBag.Burettes == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Burettes)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Pipettes and Droppers" })">
+                                            Pipettes and Droppers
+                                            @if (@ViewBag.Droppers == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Droppers)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Bottles and Jars" })">
+                                            Bottles and Jars
+                                            @if (@ViewBag.Bottles == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Bottles)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Evaporating Dishes and Test Plates" })">
+                                            Evaporating Dishes and Test Plates
+                                            @if (@ViewBag.EvaporatingDishes == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.EvaporatingDishes)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Mortar and Pestles" })">
+                                            Mortar and Pestles
+                                            @if (@ViewBag.Mortar == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Mortar)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Crucibles" })">
+                                            Crucibles
+                                            @if (@ViewBag.Crucibles == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Crucibles)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Chemicals" })">
+                                            Chemicals
+                                            @if (@ViewBag.Chemicals == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Chemicals)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Safety Equipment" })">
+                                            Safety Equipment
+                                            @if (@ViewBag.SafetyEquipment == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.SafetyEquipment)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                </ol>
+
+                            </dd>
+
+                            <dt class="odd">Physics</dt>
+                            <dd class="odd">
+                                <ol>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Measuring Tools"})">
+                                            Measuring Tools
+                                            @if (@ViewBag.MeasuringTools == null)
+                                            {
+                                            <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                            <span class="count">(@ViewBag.MeasuringTools)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Spring Scales and Balances" })">
+                                            Spring Scales and Balances
+                                            @if (@ViewBag.SpringScales == null)
+                                            {
+                                            <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                            <span class="count">(@ViewBag.SpringScales)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Masses and Weights" })">
+                                            Masses and Weights
+                                            @if (@ViewBag.MassesWeights == null)
+                                            {
+                                            <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                            <span class="count">(@ViewBag.MassesWeights)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Physics Thermometers" })">
+                                            Physics Thermometers
+                                            @if (@ViewBag.PhysicsThermometers == null)
+                                            {
+                                            <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                            <span class="count">(@ViewBag.PhysicsThermometers)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Electricity" })">
+                                            Electricity
+                                            @if (@ViewBag.Electricity == null)
+                                            {
+                                            <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                            <span class="count">(@ViewBag.Electricity)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Magnets and Magnetism" })">
+                                            Magnets and Magnetism
+                                            @if (@ViewBag.Magnets == null)
+                                            {
+                                            <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                            <span class="count">(@ViewBag.Magnets)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                            <dt class="odd">Fire Extinguishers</dt>
+                            <dd class="odd">
+                                <ol>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Water Fire Extinguishers" })">
+                                            Water Fire Extinguishers
+                                            @if (@ViewBag.water == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.water)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Foam Fire Extinguishers" })">
+                                            Foam Fire Extinguishers
+                                            @if (@ViewBag.Foam == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Foam)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                   
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "Dry Powder Fire Extinguishers" })">
+                                            Dry Powder Fire Extinguishers
+                                            @if (@ViewBag.DryPowder == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.DryPowder)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("filters", new { urlname = "CO2 Fire Extinguishers" })">
+                                            CO2 Fire Extinguishers
+                                            @if (@ViewBag.CO2 == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.CO2)</span>
+
+                                            }
+                                        </a>
+                                    </li>
+                                   
+                                </ol>
+                            </dd>
+
+                        </dl>
+                        <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-main">
+
+                <div class="category-details is-anchor">
+                    <div class="category-description">
+                        <p><span>We offer a full range of laboratory centrifuges to meet the separation needs of your application. Our offering includes high speed and ultra centrifuges from Hitachi Koki for protocols involving purification of proteins or RNA. Our brand of general purpose and microcentrifuges offer reliable operation for protocols including processing, harvesting, pelleting and separating blood, cells, and more.</span></p>
+                    </div>
+                </div>
+                <div class="category-products">
+                    <div class="toolbar">
+                        <div class="pager">
+                            <div class="count-container">
+                                <p class="amount amount--no-pages">
+                                    GrandLab Digital Fixers Ltd Products
+                                </p>
+
+                              
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+
+                    <ol class="products-list">
+    @if (!Model.Any())
+    {
+        <li>
+                        <div class="clearfix">
+                            <div class="product-shop left seventy">
+                                <div class="desc std">
+                                    <h4>Sorry the product you are searching for is currently out of stock!!!...</h4>
+                                </div>
+                            </div>
+                        </div>
+            </li>
+            }
+            else
+            {
+            foreach (var product in Model)
+            {
+<li>
+                <a href="@Url.Action("Productdetails", "Products", new {id = product.Id})" class="product-name display-block work-medium h5">@product.Name</a>
+                <div class="clearfix">
+                    <a href="@Url.Action("Productdetails", "Products", new {id = product.Id})" class="product-image left thirty">
+                        @{
+                            var base64 = Convert.ToBase64String(product.Image);
+                            var imgSrc = String.Format("data:~/Images;base64,{0}", base64);
+                        }
+                        <img src="@imgSrc" alt="product.Name" class="max-image img-thumbnail">
+                    </a>
+                    <div class="product-shop left seventy">
+                        <div class="desc std">
+                            <p>
+                                @product.Details.Substring(0, Math.Min(product.Details.Length, 200));
+                            </p><a href="@Url.Action("Productdetails", "Products", new {id = product.Id})" class="link-learn display-block work-medium">Learn More</a>
+                        </div>
+                        @using (Html.BeginForm("AddCart", "Products", new { id = product.Id }))
+                        {
+                            if (User.IsInRole(RoleName.CanManageProducts) != true)
+                            {
+                                <div class="request-links">
+                                    <button type="submit" class="button green"><span><span>Request Quote</span></span></button>
+                                    @*<a href="@Url.Action("RequestService", "ShoppingCart", new {id = product.Id})" class="service-btn">Request Service</a>*@
+                                </div>
+                            }
+                        }
+
+                    </div>
+                </div>
+            </li>
+            }
+            }
+
+</ol>
+
+
+                    <ul class="pagination">
+                        @{
+                            double totalPage = @ViewBag.TotalPages;
+                            
+                        }
+                        @for (int i = 1; i <= totalPage; i++)
+                        {
+                            if (i == ViewBag.Page)
+                            {
+                                if(@ViewBag.UrlName == null)
+                                            {
+                                    <li class="active">@Html.ActionLink(i.ToString() + " ", "Index", new { Page = i})</li>
+
+                                }
+                                else
+                                {
+                                    <li class="active">@Html.ActionLink(i.ToString() + " ", "filters", new { Page = i, urlname = @ViewBag.UrlName })</li>
+
+                                }
+                            }
+                            else
+                            {
+                                if (@ViewBag.UrlName == null)
+                                {
+                                    <li>@Html.ActionLink(i.ToString() + " ", "Index", new { Page = i })</li>
+
+                                }
+                                else
+                                {
+                                    <li>@Html.ActionLink(i.ToString() + " ", "filters", new { Page = i, urlname = @ViewBag.UrlName })</li>
+
+                                }
+
+                            }
+                        }
+                    </ul>
+                    <div class="toolbar-bottom">
+                        <div class="toolbar">
+                            <div class="pager">
+                                <div class="count-container">
+                                    <p class="amount amount--no-pages">
+                                        GrandLab Digital Fixers Ltd Products
+                                    </p>
+
+                                    
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

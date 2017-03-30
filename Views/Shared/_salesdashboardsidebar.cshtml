@@ -1,0 +1,26 @@
+﻿@helper SelectedTabClass(string tabName)
+{
+    if (tabName == ViewBag.SelectedTab)
+    {
+         @: current 
+    }
+}
+
+
+<div class="col-left sidebar col-left-first">
+    <div class="block block-account">
+        <div class="block-title">
+            <strong><span>Sales Dashboard</span></strong>
+        </div>
+        <div class="block-content">
+            <ul>
+                <li class="@SelectedTabClass("SalesDashboard")"><a href="@Url.Action("salesdashboard", "Products")">Sales Dashboard</a></li>
+                <li  class="@SelectedTabClass("Index")"><a href="@Url.Action("Index","Products")">All Products</a></li>
+                @*<li><a href="@Url.Action("Orders","Products")">New Orders</a></li>*@
+                <li  class="@SelectedTabClass("ProductQuotes")"><a href="@Url.Action("ProductQuotes","Products")">Quote Requests</a></li>
+                <li  class="@SelectedTabClass("ServiceRequests")"><a href="@Url.Action("ServiceRequests","Products")">Service Requests</a></li>
+                <li  class="@SelectedTabClass("AllServices")"><a href="@Url.Action("AllServices","Products")">All Services</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

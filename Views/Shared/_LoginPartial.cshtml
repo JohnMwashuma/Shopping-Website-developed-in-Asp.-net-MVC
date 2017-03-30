@@ -1,0 +1,38 @@
+﻿@using GrandLabFixers.Models
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm",  }))
+    {
+    @Html.AntiForgeryToken()
+
+        <ul>
+            @*<li>
+                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </li>*@
+            @*@if (User.IsInRole(RoleName.CanManageProducts))
+                {}*@
+
+            @if (User.Identity.Name == "grandlabdig2014@gmail.com")
+            {
+                <li><a href="@Url.Action("salesdashboard", "Products")">Dashboard</a></li>
+            }
+            @if (User.Identity.Name != "grandlabdig2014@gmail.com")
+            {
+                <li><a href="@Url.Action("index", "ShoppingCart")">View Cart</a></li>
+            }
+
+            <li>@Html.ActionLink("Account", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log Out</a></li>
+            @*<li>@Html.ActionLink("Add a Product", "Create", "Products")</li>*@
+        </ul>
+    }
+}
+else
+{
+    <ul>
+        @*<li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>*@
+        <li><a href="@Url.Action("index", "ShoppingCart")">View Cart</a></li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

@@ -1,0 +1,90 @@
+﻿@model GrandLabFixers.ViewModels.ProductsForm
+
+@{
+    ViewBag.Title = Model.Heading;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="site-width">
+        </div>
+        <div class="clearfix site-width">
+            @Html.Partial("_salesdashboardsidebar")
+            <div class="col-main">
+                <div class="my-account">
+                    <div class="dashboard">
+                        <div class="page-title">
+                            <h1>@Model.Heading</h1>
+                            <p class="text-success">@ViewBag.StatusMessage</p>
+                        </div>
+                        @using (Html.BeginForm(Model.Action, "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.HiddenFor(m => m.Id)
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Name)
+
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "Product Name" })
+                                @Html.ValidationMessageFor(m => m.Name)
+
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Price)
+                                @Html.TextBoxFor(m => m.Price, new { @class = "form-control", @placeholder = "Item Price with no currency symbols" })
+
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Quantity)
+                                @Html.TextBoxFor(m => m.Quantity, new { @class = "form-control", @placeholder = "Number of Item In Stock" })
+
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Image)
+                                @Html.TextBoxFor(m => m.Image, new { type = "file", accept = ".png,.jpg,.gif,.tif", name = "upload", id = "Product Photo" })
+                                @Html.ValidationMessageFor(m => m.Image)
+
+                             </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Category)
+                                @Html.DropDownListFor(m => m.Category, new SelectList(Model.Categories, "Id", "Name"), "", new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.Categories)
+                            </div>
+
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.IsFeatured, new { @type = "checkbox", @class = "no-margin inline radio" }) Check the Box to Display the product on the home page.<br>
+                                @Html.ValidationMessageFor(m => m.IsFeatured)
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Details)
+                                @Html.TextAreaFor(m => m.Details, new { @class = "form-required", @placeholder = "Product Description in details.", @rows = "5", @cols = "70" })
+                                @Html.ValidationMessageFor(m => m.Details)
+                            </div>
+
+
+
+                            <div class="buttons-set">
+                                <button type="submit" title="Save" class="button-btn" pb-role="submit"><span><span>Save</span></span></button>
+                                <p class="back-link-btn"><a href="@Url.Action("salesdashboard", "Products")"><small>« </small>Back</a></p>
+
+                            </div>
+                        }
+                    </div>
+                </div>                        <div class="std"></div>
+            </div>
+            <div class="col-left sidebar"></div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

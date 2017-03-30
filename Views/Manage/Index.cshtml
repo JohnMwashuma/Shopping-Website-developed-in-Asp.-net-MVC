@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNet.Identity
+@model GrandLabFixers.Models.IndexViewModel
+@{
+    ViewBag.Title = "My Account";
+}
+
+
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="site-width">
+        </div>
+        <div class="clearfix site-width">
+            @Html.Partial("_sidebar")
+            <div class="col-main">
+                <div class="my-account">
+                    <div class="dashboard">
+                        <div class="page-title">
+                            <h1>My Dashboard</h1>
+                            <p class="text-success">@ViewBag.StatusMessage</p>
+                        </div>
+                        <div class="welcome-msg">
+                            <p class="hello"><strong>Hello, @Model.FirstName @Model.LastName!</strong></p>
+                            <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information.</p>
+                        </div>
+                        <div class="box-account box-info">
+                            <div class="box-head">
+                                <h2>Account Information</h2>
+                            </div>
+                            <div class="col2-set">
+                                <div class="col-1">
+                                    <div class="box">
+                                        <div class="box-title">
+                                            <h3>Contact Information</h3>
+                                            <a href="@Url.Action("ChangePassword")">Edit</a>
+                                        </div>
+                                        <div class="box-content">
+                                            <p>
+
+                                                @Model.FirstName <br>
+                                                @if (Request.IsAuthenticated)
+                                                {
+                                                    @Model.UserName
+                                                 }
+                                                <br>
+                                                                                    [
+                                                    @if(Model.HasPassword)
+                                                {
+                                                        @Html.ActionLink("Change your password", "ChangePassword")
+                                                }
+                                                else
+                                                {
+                                                        @Html.ActionLink("Create", "SetPassword")
+                                                }
+                                                ]
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="box">
+                                        <div class="box-title">
+                                            <h3>External Logins</h3>
+                                           @*@Model.Logins.Count [@Html.ActionLink("Manage", "ManageLogins")]*@
+                                        </div>
+                                        <div class="box-content">
+                                            <p>
+                                                There are no external authentication services configured. Coming Soon.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>                        <div class="std"></div>
+            </div>
+            <div class="col-left sidebar"></div>
+        </div>
+    </div>
+</div>

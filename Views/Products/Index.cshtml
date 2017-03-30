@@ -1,0 +1,185 @@
+﻿@model IEnumerable<GrandLabFixers.Models.Product>
+
+@{
+    ViewBag.Title = "Shopping Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-container col2-left-layout">
+<div class="main">
+    <div class="site-width">
+    </div>
+    <div class="clearfix site-width">
+        @Html.Partial("_salesdashboardsidebar")
+        <div class="col-main relative no-side-content">
+            <div class="inner site-width">
+                <div class="cart display-single-price">
+                    <div class="page-title title-buttons">
+                        <h1>All Products</h1>
+                        <ul class="checkout-types top">
+                            <li>
+                                <p class="paypal-logo">
+                                    <a href="@Url.Action("Create")" title="Proceed to Checkout" class="button btn-proceed-checkout btn-checkout"><span><span>Add a New Product</span></span></a>
+                                    <div class="pull-right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-primary">Export To</button>
+                                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                                            <ul class="dropdown-menu">
+                                                <li>@Html.ActionLink("Excel", "ExportAllProducts", new {ReportType="Excel"})</li>
+                                                <li>@Html.ActionLink("Wrd", "ExportAllProducts", new {ReportType= "Word" })</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    @*<a href="@Url.Action("Create")"><img src="~/Images/checkout-logo-medium.png" alt="Add a New Product" title="Add a New Product"></a>*@
+                                </p>
+
+                            </li>
+                        </ul><br/>
+                       </div>
+                    @*<ul class="messages">
+                                <li class="success-msg">
+                                    <ul>
+                                        <li><span>3 ft. Wide Motorized Adjustable Height Base Stand with Leg Levelers (NU-475/477/480 -300 Models) was updated in your shopping cart.</span></li>
+                                    </ul>
+                                </li>
+                            </ul>*@
+
+
+                   
+
+                        <table id="shopping-cart-table" class="product-table data-table">
+                            <colgroup>
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                                
+
+                            </colgroup>
+                            <thead>
+                            <tr class="first last">
+                                <th rowspan="1"><span class="nobr">Product Name</span></th>
+                                <th class="a-center cart-price-head" colspan="1">
+                                    <!-- <div class="cart-price-placeholder">-->
+                                    <span class="nobr">Price</span>
+                                    <!-- </div>-->
+                                </th>
+                                <th class="a-center cart-price-head" colspan="1">
+                                    <!-- <div class="cart-price-placeholder">-->
+                                    <span class="nobr">Quantity</span>
+                                    <!-- </div>-->
+                                </th>
+                                <th class="a-center" rowspan="1">
+                                    <span class="nobr">
+                                            Actions
+                                        </span>
+                                </th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+
+                            @if (!Model.Any())
+                            {
+                                <tr>
+                                    <td colspan="4">
+                                        No Product record found
+                                    </td>
+                                </tr>
+                            }
+                            else
+                            {
+
+
+                                foreach (var product in Model)
+                                {
+                                    <tr class="first last odd">
+                                        @*<td class="product-cart-image">
+                                            <a href="http://www.nuaire.com/3-ft-wide-motorized-adjustable-height-base-stand-with-leg-levelers-nu-475-477-480-300-models" title="@product.Name" class="product-image">
+                                                @{
+                                                    var base64 = Convert.ToBase64String(product.Image);
+                                                    var imgSrc = String.Format("data:~/Images;base64,{0}", base64);
+                                                }
+                                                <img src="@imgSrc" alt="@product.Name">
+                                            </a>
+
+                                            <ul class="cart-links">
+                                                <li>
+                                                    <a href="http://www.nuaire.com/checkout/cart/configure/id/167/" title="Edit item parameters">Edit</a>
+                                                </li>
+
+                                            </ul>
+                                        </td>*@
+                                        <td class="product-cart-info">
+                                            <a href="@Url.Action("ProductView", "Products", new {id = product.Id})" title="Remove Item" class="btn-remove btn-remove2">Remove Item</a>
+                                            <h2 class="product-name">
+                                                <a href="@Url.Action("ProductView", "Products", new {id = product.Id})">@product.Name</a>
+                                            </h2>
+                                           
+                                        </td>
+
+                                        <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                            <span class="cart-price">
+
+                                        <span class="price">@product.Price</span>
+
+                                    </span>
+                                        </td>
+
+                                        <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                            <span class="cart-price">
+
+                                        <span class="price">@product.Quantity</span>
+
+                                    </span>
+                                        </td>
+
+
+
+                                        <td class="a-center product-cart-remove last">
+                                            <a href="@Url.Action("RemoveProductItem", new {id = product.Id})" title="Remove Item" class="btn-remove btn-remove2">Remove Item</a>
+                                            <a href="@Url.Action("Edit", "Products", new {id = product.Id})" title="Edit Item" class="glyphicon glyphicon-edit"></a>
+                                            <a href="@Url.Action("ProductView", "Products", new {id = product.Id})" title="View Item" class="glyphicon glyphicon-open"></a>
+                                            <a href="@Url.Action("ExportTo","Products", new {ReportType="Excel",id = product.Id})" title="Print Item" class="glyphicon glyphicon-download"></a>
+                                        </td>
+
+
+                                    </tr>
+                                }
+                            }
+                            </tbody>
+                        </table>
+                       
+                        @section Scripts{
+                            <script>
+                                $(document).ready(function () {
+                                    $('#shopping-cart-table').dataTable();
+                                });
+                            </script>
+                        }
+                        @*<ul class="pagination pull-right">
+                            @{
+                                double totalPage = @ViewBag.TotalPages;
+                            }
+                            @for (int i = 1; i <= totalPage; i++)
+                            {
+                                if (i == ViewBag.Page)
+                                {
+                                    <li class="active">@Html.ActionLink(i.ToString() + " ", "Index", new { Page = i })</li>
+                                }
+                                else
+                                {
+                                    <li>@Html.ActionLink(i.ToString() + " ", "Index", new { Page = i })</li>
+
+                                }
+                            }
+                        </ul>*@
+
+                    </div>
+                <div class="std"></div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>

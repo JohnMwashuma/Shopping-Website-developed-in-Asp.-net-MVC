@@ -1,0 +1,438 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - GrandLab Digital Fixers Ltd.</title>
+    <link rel="icon" href="~/Images/grandlabdigitalfexrslogoicon.png"type="image/x-icon">
+    <link href="~/Content/css.css" rel="stylesheet" type="text/css">
+    @*<link href="~/Content/font-awesome.min.css" rel="stylesheet" />*@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/style.css" rel="stylesheet"/>
+
+</head>
+<body class="cms-index-index cms-home chrome windows not-ie not-windows not-mobile not-kindle not-safari-windows header-transition-true">
+
+<div class="wrapper">
+<noscript>
+    &lt;div class="global-site-notice noscript"&gt;
+    &lt;div class="notice-inner"&gt;
+    &lt;p&gt;
+    &lt;strong&gt;JavaScript seems to be disabled in your browser.&lt;/strong&gt;&lt;br /&gt;
+    You must have JavaScript enabled in your browser to utilize the functionality of this website. &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+</noscript>
+<div class="page">
+
+<div class="mobile-menu fixed hide">
+<div class="close-mobile-menu-btn pointer">
+    <div class="inner"></div>
+</div>
+
+<ul class="level-0">
+
+    <li class="mega menu-item-has-children">
+        <a href="@Url.Action("Index", "Home")">Products</a>
+
+        <div class="mobile-arrow pointer right ten"><span class="inner"></span></div>
+        <ul class="level-1 clearfix">
+            <li class="go-back no-float hundred"><a href="javascript:;">Back</a></li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #0080ac;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Dissection Tools"})" style="height: 185px;">
+                    <img src="~/Images/dissectiontools.jpg" alt="Dissection Tools" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Dissection Tools
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #b9123c;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Life Science"})" style="height: 185px;">
+                    <img src="~/Images/life-science.jpg" alt="Life Science" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Life Science
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #0080ac;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Agar, Petri Dishes, And Bacteria"})" style="height: 185px;">
+                    <img src="~/Images/agar-and-petri-dishes-thumb.jpg" alt="Agar, Petri Dishes, And Bacteria" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Bacteria
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #3498db;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Ring Stands, Clamps and Supports"})" style="height: 185px;">
+                    <img src="~/Images/ringstandequipment.jpg" alt="Ring Stands, Clamps and Supports" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Ring Stands
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #7fa9ae;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Distillation Glassware and Equipment"})" style="height: 185px;">
+                    <img src="~/Images/distillation-equipment.jpg" alt="Distillation Glassware Equipment" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Distillation
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #00a499;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Organic Chemistry Equipment"})" style="height: 185px;">
+                    <img src="~/Images/organic-equipment.jpg" alt="Organic Chemistry Equipment" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Organic Chemistry
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #00965e;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Beakers"})" style="height: 185px;">
+                    <img src="~/Images/Beakers.jpg" alt="Beakers" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Beakers
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #236192;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Pyrex Lab Glassware"})" style="height: 185px;">
+                    <img src="~/Images/pyrex-thumb.jpg" alt="ThermometersPyrex Lab Glassware" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Pyrex Glassware
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #236192;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Stoppers and Corks"})" style="height: 185px;">
+                    <img src="~/Images/stoppers.jpg" alt="Stoppers and Corks" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Stoppers and Corks
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #0080ac;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Measuring Tools"})" style="height: 185px;">
+                    <img src="~/Images/measurement-equipment.jpg" alt="Measuring Tools" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Measuring Tools
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #0080ac;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Spring Scales and Balances"})" style="height: 185px;">
+                    <img src="~/Images/light-and-optics.jpg" alt="Spring Scales and Balances" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Balances
+                </a>
+            </li>
+            <li class="left four-column sm-tablet-two-column relative" style="border-bottom: 6px solid #0080ac;">
+                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Magnets and Magnetism"})" style="height: 185px;">
+                    <img src="~/Images/magnets.jpg" alt="Magnets and Magnetism" class="max-image img-thumbnail" style="width: 120px; height: 120px;">
+                    Magnets 
+                </a>
+            </li>
+           
+        </ul>
+    </li>
+    <li class="menu-item-has-children">
+        <a href="@Url.Action("Service", "Home")">
+            Services
+        </a>
+    </li>
+
+    <li class="menu-item-has-children">
+        <a href="#">
+            Contact Us
+        </a>
+        <div class="mobile-arrow pointer right ten"><span class="inner"></span></div>
+        <ul class="level-1">
+            <li class="go-back"><a href="javascript:;">Back</a></li>
+
+            <li>
+                <a href="@Url.Action("Index", "Home")">
+                    Request Quote
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Service", "Home")">
+                    Request Service
+                </a>
+            </li>
+        </ul>
+    </li>
+
+    
+</ul>
+</div>
+
+    <header class="header">
+        <div class="header-container">
+            <a class="logo" href="@Url.Action("Service", "Home")">
+                <img src="@Url.Content("~/Images/grandlabdigitalfexrslogo.png")" alt="GrandLab Digital Fixers">
+            </a>
+            <div class="aux-nav text-right">
+                <ul>
+                    <li>
+                        @Html.Partial("_LoginPartial")
+                    </li>
+                    <li class="phone"><a href="tel:+254-725-294-924">(+254) 725-294-924</a></li>
+                </ul>
+            </div>
+            <div class="main-navigation">
+
+                <ul class="level-0">
+                    
+                    <li class="mega menu-item-has-children">
+                        <a href="@Url.Action("index", "Home")">Products</a>
+
+                        <ul class="level-1 clearfix">
+                            <li class="left six-column relative" style="border-bottom: 6px solid #0080ac;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Dissection Tools"})" style="height: 221px;">
+                                    <img src="~/Images/dissectiontools.jpg" alt="Dissection Tools" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Dissection Tools
+                                </a>
+                            </li>
+                            <li class="left six-column relative" style="border-bottom: 6px solid #b9123c;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Life Science"})" style="height: 221px;">
+                                    <img src="~/Images/life-science.jpg" alt="Life Science" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Science
+                                </a>
+                            </li>
+                            <li class="left six-column relative" style="border-bottom: 6px solid #0080ac;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Agar, Petri Dishes, And Bacteria"})" style="height: 221px;">
+                                    <img src="~/Images/agar-and-petri-dishes-thumb.jpg" alt="Agar, Petri Dishes, And Bacteria" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Bacteria
+                                </a>
+                            </li>
+                            <li class="left six-column relative" style="border-bottom: 6px solid #7fa9ae;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Distillation Glassware and Equipment"})" style="height: 221px;">
+                                    <img src="~/Images/distillation-equipment.jpg" alt="Distillation Glassware Equipment" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Distillation Equipment
+                                </a>
+                            </li>
+                           <li class="left six-column relative" style="border-bottom: 6px solid #00a499;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Ring Stands, Clamps and Supports"})" style="height: 221px;">
+                                    <img src="~/Images/ringstandequipment.jpg" alt="Ring Stands, Clamps and Supports" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Clamps
+                                </a>
+                            </li>
+                            <li class="left six-column relative" style="border-bottom: 6px solid #00a499;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Organic Chemistry Equipment"})" style="height: 221px;">
+                                    <img src="~/Images/organic-equipment.jpg" alt="Organic Chemistry Equipment" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Organic Chemistry
+                                </a>
+                            </li>
+                            <li class="left six-column relative" style="border-bottom: 6px solid #00965e;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Beakers"})" style="height: 221px;">
+                                    <img src="~/Images/Beakers.jpg" alt="Beakers" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Beakers
+                                </a>
+                            </li>
+                            <li class="left six-column relative" style="border-bottom: 6px solid #00965e;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Pyrex Lab Glassware"})" style="height: 221px;">
+                                    <img src="~/Images/pyrex-thumb.jpg" alt="Pyrex Lab Glassware" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Pyrex-Beakers
+                                </a>
+                            </li>
+                            
+                            <li class="left six-column relative" style="border-bottom: 6px solid #236192;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Stoppers and Corks"})" style="height: 221px;">
+                                    <img src="~/Images/stoppers.jpg" alt="Stoppers and Corks" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Stoppers and Corks
+                                </a>
+                            </li>
+                            <li class="left six-column relative" style="border-bottom: 6px solid #0080ac;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Measuring Tools"})" style="height: 221px;">
+                                    <img src="~/Images/measurement-equipment.jpg" alt="Measuring Tools" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Measuring Tools
+                                </a>
+                            </li>
+                            <li class="left six-column relative" style="border-bottom: 6px solid #0080ac;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Spring Scales and Balances"})" style="height: 221px;">
+                                    <img src="~/Images/light-and-optics.jpg" alt="Spring Scales and Balances" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Balances
+                                </a>
+                            </li>
+                            <li class="left six-column relative" style="border-bottom: 6px solid #0080ac;">
+                                <a class="match" href="@Url.Action("filters", "Home", new {urlname = "Magnets and Magnetism"})" style="height: 221px;">
+                                    <img src="~/Images/magnets.jpg" alt="Magnets and Magnetism" class="max-image img-thumbnail" style="width: 140px; height: 140px;">
+                                    Magnets and Magnetism
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li class="standard menu-item-has-children">
+                        <a href="@Url.Action("Service", "Home")">
+                            Services
+                        </a>
+                    </li>
+                    <li class="standard menu-item-has-children">
+                        <a href="#">
+                            Contact Us
+                        </a>
+                        <ul class="level-1 last">
+                            <li>
+                                <a href="@Url.Action("Index", "Home")">
+                                    Request Quote
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Service", "Home")">
+                                    Request Service
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="search"><a href="javascript:;"><i class="fa fa-search"></i></a></li>
+                </ul>
+            </div>
+            @{
+                var urlaction = Url.RequestContext.RouteData.Values["action"];
+                var urlcontroller = Url.RequestContext.RouteData.Values["controller"];
+            }
+            <div class="search-container hide absolute">
+                @{
+                    if ((string)urlaction == "Index" && (string)urlcontroller == "Home")
+                    {
+                        <form id="search_mini_form" action="@Url.Action("Index", "Home")" method="get">
+                            <div class="input-box">
+                                <label for="search">Search:</label>
+                                <input id="search" type="search" name="search" value="" class="input-text required-entry" maxlength="128" placeholder="Search">
+                                <button type="submit" title="Search" class="button search-button"><i class="fa fa-search"></i></button>
+                            </div>
+
+                            <div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
+
+                        </form>
+                    }
+                    else if ((string)urlaction == "Service" && (string)urlcontroller == "Home")
+                    {
+                        <form id="search_mini_form" action="@Url.Action("Service", "Home")" method="get">
+                            <div class="input-box">
+                                <label for="search">Search:</label>
+                                <input id="search" type="search" name="search" value="" class="input-text required-entry" maxlength="128" placeholder="Search">
+                                <button type="submit" title="Search" class="button search-button"><i class="fa fa-search"></i></button>
+                            </div>
+
+                            <div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
+
+                        </form>
+                    }
+                    else if ((string)urlaction == "BiologyLab" && (string)urlcontroller == "Products")
+                    {
+                        <form id="search_mini_form" action="@Url.Action("BiologyLab", "Products")" method="get">
+                            <div class="input-box">
+                                <label for="search">Search:</label>
+                                <input id="search" type="search" name="search" value="" class="input-text required-entry" maxlength="128" placeholder="Search">
+                                <button type="submit" title="Search" class="button search-button"><i class="fa fa-search"></i></button>
+                            </div>
+
+                            <div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
+
+                        </form>
+                    }
+                    else 
+                    {
+                        <form id="search_mini_form" action="@Url.Action("Index", "Home")" method="get">
+                            <div class="input-box">
+                                <label for="search">Search:</label>
+                                <input id="search" type="search" name="search" value="" class="input-text required-entry" maxlength="128" placeholder="Search">
+                                <button type="submit" title="Search" class="button search-button"><i class="fa fa-search"></i></button>
+                            </div>
+
+                            <div id="search_autocomplete" class="search-autocomplete" style="display: none;"></div>
+
+                        </form>
+                    }
+                }
+
+            </div>
+            <div class="mobile-controls hide text-right">
+                <div class="mobile-menu-btn pointer inline-block"><i class="fa fa-bars" aria-hidden="true"></i></div>
+            </div>
+
+        </div>
+    </header>
+
+            <div class="container body-content">
+
+                @RenderBody()
+            </div>
+      <br/>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 col-lg-3">
+                    <div class="widget">
+                        <h4>Get in touch with us</h4>
+                        <address>
+                            <strong>GrandLab Digital Fixers LTD.</strong><br>
+                            P.O BOX 80120, MOMBASA<br>
+                            KENYA.
+                        </address>
+                        <p>
+                            <i class="icon-phone"></i> (254) 725-294-924 - (254) 703-532-110<br>
+                            (254) 701-136-952
+                            <i class="icon-envelope-alt"></i> grandlabdig2014@gmail.com
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="widget">
+                        <h4>Information</h4>
+                        <ul class="link-list">
+                            <li><a href="#">Press release</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Career center</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="widget">
+                        <h4>Pages</h4>
+                        <ul class="link-list">
+                            <li><a href="#">Press release</a></li>
+                            <li><a href="#">Terms and conditions</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Career center</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3 col-lg-3">
+                    <div class="widget">
+                        <h4>Newsletter</h4>
+                        <p>Fill your email and sign up for monthly newsletter to keep updated</p>
+                        <div class="form-group multiple-form-group input-group">
+                            <input type="email" name="email" class="form-control">
+                            <span class="input-group-btn">
+                                <button type="button" class="btn btn-theme btn-add">Subscribe</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="copyright">
+                            <p>© Grandlab Digital Fixers Ltd. - All Right Reserved</p>
+                            <div class="credits">
+                                <!--
+                                    All the links in the footer should remain intact.
+                                    You can delete the links only if you purchased the pro version.
+                                    Licensing information: https://bootstrapmade.com/license/
+                                    Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Sailor
+                                -->
+                                <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">This website was developed</a> by <a href="https://bootstrapmade.com/">John Kirigha Mwashuma Asp.net MVC Web Developer</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <ul class="social-network">
+                            <li><a href="#" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" data-placement="top" title="" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#" data-placement="top" title="" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="#" data-placement="top" title="" data-original-title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>   
+
+                    @Scripts.Render("~/bundles/lib")
+                    @RenderSection("scripts", required: false)
+                </div>
+            </div>
+</body>
+</html>

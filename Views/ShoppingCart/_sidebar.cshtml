@@ -1,0 +1,32 @@
+﻿<div class="col-right sidebar">
+    <div id="checkout-progress-wrapper">
+
+        <div class="blue-box-sidebar ">
+            <div class="inner">
+                <div class="body relative">
+                    <div class="work-extra-light title">GrandLab</div>
+                    <div>
+                        Digital Fixers Ltd.<br>
+                        P.O BOX 80120, MOMBASA
+                        KENYA.
+                    </div>
+                    <a href="tel:+254-725-294-924">Phone: (254) 725-294-924</a><br>
+
+                </div>
+            </div>
+            @{
+                var urlaction = Url.RequestContext.RouteData.Values["action"];
+
+                if ((string)urlaction != "RequestService")
+                {
+                    <div class="sidebar-section quote">
+                        <div class="work-medium title h5">Interested in getting a Service?</div>
+                        <a href="@Url.Action("Service","Home")" class="button green small">Request Service</a>
+                    </div>
+                }
+            }
+
+        </div>
+
+    </div>
+</div>

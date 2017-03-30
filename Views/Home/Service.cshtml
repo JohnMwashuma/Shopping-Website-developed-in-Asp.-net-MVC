@@ -1,0 +1,395 @@
+﻿@using GrandLabFixers.Models
+@model IEnumerable<GrandLabFixers.Models.Services>
+@{
+    ViewBag.Title = "GrandLab Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="main-container col2-left-layout">
+    <div class="main">
+
+    @*<div class="cms-page-banner text-center background-cover relative has-image" style="background-image:url(/Images/homepage-banner.jpg);">
+            <div class="overlay absolute full z-index-1"></div>
+            <h1 class="title relative z-index-2">
+
+                GrandLab Digital Fixers Ltd Services
+            </h1>
+        </div>*@
+        <!-- Slider-starts-Here -->
+    
+       
+        
+    <!--//End-slider-script -->
+       
+        <div id="top" class="callbacks_container">
+            <ul class="rslides" id="slider3">
+                <li>
+                    <div class="banner-info">
+                        <div class="banner-info1">
+                            <div class="banner-inf">
+                                <h1>Pest Control</h1>
+                                <p>
+                                    When you have a pest problem or want to protect your home from future invaders,
+                                    we apply our science-based approach to help identify...
+                                </p>
+                                <div class="buy">
+                                    <a href="single.html">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-info">
+                        <div class="banner-info1">
+                            <div class="banner-inf">
+                                <h1>Termite Control</h1>
+                                <p>
+                                    Whether you have a termite problem or just want to protect your home from possible invaders,
+                                    our integrated A.I.M® pest protection process works...
+                                </p>
+                                <div class="buy">
+                                    <a href="single.html">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="banner-info">
+                        <div class="banner-info1">
+                            <div class="banner-inf">
+                                <h1>BedBugs Control</h1>
+                                <p>
+                                    Bed bugs can be brought in from the outside at any time,
+                                    so we can’t guarantee that your homewill never have bed bugs again.
+                                </p>
+                                <div class="buy">
+                                    <a href="single.html">Explore</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="clearfix site-width">
+            <div class="col-left sidebar col-left-first">
+                <div class="block block-layered-nav block-layered-nav--no-filters">
+                    <div class="block-title">
+                        <strong><span>Filter By</span></strong>
+                    </div>
+                    <div class="block-content toggle-content">
+                        <p class="block-subtitle block-subtitle--filter">Filter</p>
+                        <dl id="narrow-by-list">
+                            <dt class="odd">Pest Control Services</dt>
+                            <dd class="odd">
+                                <ol>
+                                    <li>
+                                        <a href="@Url.Action("servicefilter", new {urlname = "Fumigation Services"})">
+                                            Fumigation Services
+                                            @if (@ViewBag.Fumigation == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Fumigation)</span>
+
+                                            }
+                                        </a>
+                                        <p class="well well-sm">
+                                            Fumigation is a method used by pest controllers to suffocate,
+                                            poison and exterminate numerous sorts of pests using lethal gas within enclosed quarters.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("servicefilter", new {urlname = "Bed Bug Control Services"})">
+                                            Bed Bug Control Services
+                                            @if (@ViewBag.BedBug == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.BedBug)</span>
+
+                                            }
+                                        </a>
+                                        <p class="well well-sm">
+                                           Once you’re sure your property is infested with bed bugs,
+                                            it’s extremely important to take immediate actions as bed bugs can cause serious health problems like skin rashes and allergies.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("servicefilter", new {urlname = "Rodent Control Services"})">
+                                            Rodent Control Services
+                                            @if (@ViewBag.Rodent == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Rodent)</span>
+
+                                            }
+                                        </a>
+                                        <p class="well well-sm">
+                                            Rodents’ biology and habits can make them challenging to control,
+                                            and they present a serious menace to your home.
+                                            If you’re in need of rodent control services, don't hesitate to enlist our help.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("servicefilter", new {urlname = "CockRoach Control Services"})">
+                                            CockRoach Control Services
+                                            @if (@ViewBag.CockRoach == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.CockRoach)</span>
+
+                                            }
+                                        </a>
+                                        <p class="well well-sm">
+                                            Cockroaches can infest pretty much any property.
+                                            Usually, they are most active during the late hours when all the lights are out...
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("servicefilter", new {urlname = "Mosquito Control Services"})">
+                                            Mosquito Control Services
+                                            @if (@ViewBag.Mosquito == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Mosquito)</span>
+
+                                            }
+                                        </a>
+                                        <p class="well well-sm">
+                                            Mosquito treatment is usually an integrated
+                                            effort involving source reduction plus the use of chemical control products when needed.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("servicefilter", new {urlname = "Ant Control Services"})">
+                                            Ant Control Services
+                                            @if (@ViewBag.Ant == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Ant)</span>
+
+                                            }
+                                        </a>
+                                        <p class="well well-sm">
+                                            Ants are capable of nesting inside buildings, sometimes inside insulated spaces.
+                                            The most visible sign of ants are the trails of ants as they forage for resources.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("servicefilter", new {urlname = "Flies Control Services"})">
+                                            Flies Control Services
+                                            @if (@ViewBag.BedBugFlies == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Flies)</span>
+
+                                            }
+                                        </a>
+                                        <p class="well well-sm">
+                                            More than 100 pathogens are associated with the house fly.
+                                            These pathogens can cause disease in humans and animals,
+                                            including typhoid fever, cholera, bacillary dysentery and hepatitis
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("servicefilter", new {urlname = "Mite Control Services"})">
+                                            Mite Control Services
+                                            @if (@ViewBag.Mite == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Mite)</span>
+
+                                            }
+                                        </a>
+                                        <p class="well well-sm">
+                                            Mites are a diverse group of animals.
+                                            Some mites are predatory and will feed on other mites.
+                                            Others are detritivores and feed on decaying material.
+                                        </p>
+                                    </li>
+                                </ol>
+                            </dd>
+                            <dt class="even">Cleaning Services</dt>
+                            <dd class="even">
+                                <ol>
+                                    <li>
+                                        <a href="@Url.Action("servicefilter", new {urlname = "Sanitary Bins Cleaning Services"})">
+                                            Sanitary Bins Cleaning Services
+                                            @if (@ViewBag.Sanitary == null)
+                                            {
+                                                <span class="count">(0)</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="count">(@ViewBag.Sanitary)</span>
+
+                                            }
+                                        </a>
+                                        <p class="well well-sm">
+                                            We provide an all-in-one sanitary waste collection and disposal service where sanitary bins
+                                            are provided in each cubicle at the client facility to collect and store sanitary waste hygienically and safely.
+                                        </p>
+                                    </li>
+                                </ol>
+                            </dd>
+                            
+                        </dl>
+                        <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-main">
+
+                <div class="category-details is-anchor">
+                    <div class="category-description">
+                        <p><span>We offer a full range of laboratory centrifuges to meet the separation needs of your application. Our offering includes high speed and ultra centrifuges from Hitachi Koki for protocols involving purification of proteins or RNA. Our brand of general purpose and microcentrifuges offer reliable operation for protocols including processing, harvesting, pelleting and separating blood, cells, and more.</span></p>
+                    </div>
+                </div>
+                <div class="category-products">
+                    <div class="toolbar">
+                        <div class="pager">
+                            <div class="count-container">
+                                <p class="amount amount--no-pages">
+                                   GrandLab Digital Fixers Ltd Services
+                                </p>
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+
+                    <ol class="products-list">
+                        @foreach (var service in Model)
+                        {
+                            <li>
+                                <a href="@Url.Action("ServiceDetails", "Products", new {id = service.ServiceId})" class="product-name display-block work-medium h5">@service.Name</a>
+                                <div class="clearfix">
+                                    <a href="@Url.Action("ServiceDetails", "Products", new {id = service.ServiceId})" class="product-image left thirty">
+                                        @{
+                                            var base64 = Convert.ToBase64String(service.Image);
+                                            var imgSrc = String.Format("data:~/Images;base64,{0}", base64);
+                                        }
+                                        <img src="@imgSrc" alt="NuWind NU-C200R General Purpose Bench Top 2 Liter Refrigerated Centrifuge" class="max-image img-thumbnail">
+                                    </a>
+                                    <div class="product-shop left seventy">
+                                        <div class="desc std">
+                                            <p>
+                                                @service.Details.Substring(0, Math.Min(service.Details.Length, 200));
+                                            </p><a href="@Url.Action("ServiceDetails", "Products", new {id = service.ServiceId})" class="link-learn display-block work-medium">Learn More</a>
+                                        </div>
+                                        @using (Html.BeginForm("RequestService", "ShoppingCart", new { id = service.ServiceId }))
+                                        {
+                                            if (User.IsInRole(RoleName.CanManageProducts) != true)
+                                             {
+                                                 <div class="request-links">
+                                                     <button type="submit" title="Request Service" class="button green"><span><span>Request Service</span></span></button>
+                                                 </div>
+                                             }
+                                        }
+
+                                    </div>
+                                </div>
+                            </li>
+                                            }
+
+                    </ol>
+
+
+                    <ul class="pagination">
+                        @{
+                            double totalPage = @ViewBag.TotalPages;
+                        }
+                        @for (int i = 1; i <= totalPage; i++)
+                        {
+                            if (i == ViewBag.Page)
+                            {
+                                <li class="active">@Html.ActionLink(i.ToString() + " ", "Service", new { Page = i })</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink(i.ToString() + " ", "Service", new { Page = i })</li>
+
+                            }
+                        }
+                    </ul>
+                    <div class="toolbar-bottom">
+                        <div class="toolbar">
+                            <div class="pager">
+                                <div class="count-container">
+                                    <p class="amount amount--no-pages">
+                                        GrandLab Digital Fixers Ltd Services
+                                    </p>
+
+
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+@section Scripts
+    {
+<script>
+				    // You can also use "$(window).load(function() {"
+				    $(function () {
+				      // Slideshow 4
+				      $("#slider3").responsiveSlides({
+				        auto: true,
+				        pager: false,
+				        nav: true,
+				        speed: 500,
+				        namespace: "callbacks",
+				        before: function () {
+				          $('.events').append("<li>before event fired.</li>");
+				        },
+				        after: function () {
+				          $('.events').append("<li>after event fired.</li>");
+				        }
+				      });
+
+				    });
+</script>
+    }

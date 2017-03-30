@@ -1,0 +1,106 @@
+﻿@model GrandLabFixers.ViewModels.RequestQuoteForm
+
+@{
+    ViewBag.Title = Model.Heading;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="site-width">
+        </div>
+        <div class="clearfix site-width">
+            @Html.Partial("_salesdashboardsidebar")
+            <div class="col-main">
+                <div class="my-account">
+                    <div class="dashboard">
+                        <div class="page-title">
+                            <h1>@Model.Heading</h1>
+                            <p class="text-success">@ViewBag.StatusMessage</p>
+                        </div>
+                        <div class="product-view">
+                            <div class="product-img-box right two-column tablet-one-column">
+                                <div class="product-image product-image-zoom">
+                                    <div class="product-image-gallery">
+
+                                        @{
+                                        var base64 = Convert.ToBase64String(@Model.Image);
+                                        var imgSrc = String.Format("data:~/Images;base64,{0}", base64);
+                                        }
+                                        <label>Product Image</label><br />
+                                        <img id="image-main" class="gallery-image visible max-image" src="@imgSrc">
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+                            <div class="product-shop left two-column tablet-one-column">
+                                <div class="form-group">
+                                    <label>Product Name</label><br />
+
+                                    @Html.DisplayFor(m => m.ProductName)
+                                </div>
+                                <div class="form-group">
+                                    <label>Customer Name</label><br/>
+
+                                    @Html.DisplayFor(m => m.LastName)
+                                </div>
+                                <div class="form-group">
+                                    <label>Customer Email</label><br/>
+                                    @Html.DisplayFor(m => m.Email)
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Institution Name</label><br/>
+                                    @Html.DisplayFor(m => m.Institution)
+
+                                </div>
+                                <div class="form-group">
+                                    <label>Cuontry of Origin</label><br/>
+
+                                    @Html.DisplayFor(c => c.CountryName.Name)
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Quantity Ordered</label><br/>
+                                    @Html.DisplayFor(m => m.Quantity)
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Date Ordered</label><br/>
+                                    @Html.DisplayFor(c => c.RequestDate)
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Delivery Message</label><br/>
+                                    @Html.DisplayFor(m => m.Message)
+                                </div>
+                                <div class="pull-left">
+                                    <p class="back-link-btn"><a href="@Url.Action("ProductQuotes", "Products")"><small>« </small>Back</a>
+                                    </p>
+
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                </div>                        <div class="std"></div>
+            </div>
+            <div class="col-left sidebar"></div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

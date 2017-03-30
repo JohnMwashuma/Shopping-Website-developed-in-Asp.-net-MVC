@@ -1,0 +1,176 @@
+﻿@model GrandLabFixers.ViewModels.OrderForm
+
+@{
+    ViewBag.Title = "Shopping Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-container col2-left-layout">
+    <div class="main">
+        <div class="site-width">
+        </div>
+        <div class="clearfix site-width">
+            @Html.Partial("_salesdashboardsidebar")
+            <div class="col-main relative no-side-content">
+                <div class="inner site-width">
+                    <div class="cart display-single-price">
+                        <div class="page-title title-buttons">
+                            <h1>All Orders</h1>
+                           
+                        </div>
+                        @*<ul class="messages">
+                                <li class="success-msg">
+                                    <ul>
+                                        <li><span>3 ft. Wide Motorized Adjustable Height Base Stand with Leg Levelers (NU-475/477/480 -300 Models) was updated in your shopping cart.</span></li>
+                                    </ul>
+                                </li>
+                            </ul>*@
+
+
+
+
+                        <table id="shopping-cart-table" class="product-table data-table ">
+                            <colgroup>
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+                                <col width="1">
+
+                            </colgroup>
+                            <thead>
+                                <tr class="first last">
+                                    <th rowspan="1"><span class="nobr">Product</span></th>
+                                    <th class="a-center cart-price-head" colspan="1">
+                                        <!-- <div class="cart-price-placeholder">-->
+                                        <span class="nobr">Quantity</span>
+                                        <!-- </div>-->
+                                    </th>
+                                   <th class="a-center cart-price-head" colspan="1">
+                                        <!-- <div class="cart-price-placeholder">-->
+                                        <span class="nobr">Client</span>
+                                        <!-- </div>-->
+                                    </th>
+                                    <th class="a-center cart-price-head" colspan="1">
+                                        <!-- <div class="cart-price-placeholder">-->
+                                        <span class="nobr">Institution</span>
+                                        <!-- </div>-->
+                                    </th>
+                                    <th class="a-center cart-price-head" colspan="1">
+                                        <!-- <div class="cart-price-placeholder">-->
+                                        <span class="nobr">Address</span>
+                                        <!-- </div>-->
+                                    </th>
+
+                                    <th class="a-center cart-price-head" colspan="1">
+                                        <!-- <div class="cart-price-placeholder">-->
+                                        <span class="nobr">City</span>
+                                        <!-- </div>-->
+                                    </th>
+                                    <th class="a-center cart-price-head" colspan="1">
+                                        <!-- <div class="cart-price-placeholder">-->
+                                        <span class="nobr">Country</span>
+                                        <!-- </div>-->
+                                    </th>
+                                    <th class="a-center cart-price-head" colspan="1">
+                                        <!-- <div class="cart-price-placeholder">-->
+                                        <span class="nobr">Phone</span>
+                                        <!-- </div>-->
+                                    </th>
+
+                                    <th class="a-center" rowspan="1">&nbsp;</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                @if (!Model.Orders.Any())
+                                {
+                                    <tr>
+                                        <td colspan="5">
+                                            No record found
+                                        </td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    foreach (var client in Model.Orders)
+                                    {
+                                        <tr class="first last odd">
+                                            <td class="product-cart-info">
+                                                <a href="http://www.nuaire.com/checkout/cart/delete/id/167/form_key/07aBBE4RhtOo7qza/uenc/aHR0cDovL3d3dy5udWFpcmUuY29tL2NoZWNrb3V0L2NhcnQv/" title="Remove Item" class="btn-remove btn-remove2">Remove Item</a>
+                                                <h2 class="product-name">
+                                                    <a href="http://www.nuaire.com/3-ft-wide-motorized-adjustable-height-base-stand-with-leg-levelers-nu-475-477-480-300-models">@client.Product.Name</a>
+                                                </h2>
+                                            </td>
+
+                                            <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                                <span class="cart-price">
+
+                                                                                        <span class="price">@client.Quantity </span>
+
+                                                                                    </span>
+                                            </td>
+
+                                            <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                                <span class="cart-price">
+
+                                                    <span class="price">@client.LastName</span>
+
+                                                </span>
+                                            </td>
+                                            <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                                <span class="cart-price">
+
+                                                    <span class="price">@client.Company</span>
+
+                                                </span>
+                                            </td>
+                                            <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                                <span class="cart-price">
+
+                                                    <span class="price">@client.Address</span>
+
+                                                </span>
+                                            </td>
+                                            <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                                <span class="cart-price">
+
+                                                    <span class="price">@client.City</span>
+
+                                                </span>
+                                            </td>
+                                            <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                                <span class="cart-price">
+
+                                                    <span class="price">@client.Country.Name</span>
+
+                                                </span>
+                                            </td>
+                                            <td class="product-cart-price" data-rwd-label="Price" data-rwd-tax-label="Excl. Tax">
+                                                <span class="cart-price">
+
+                                                    <span class="price">@client.Phone</span>
+
+                                                </span>
+                                            </td>
+
+                                            <td class="a-center product-cart-remove last">
+                                                <a href="@Url.Action("RemoveOrder", new {id = client.Id})" title="Remove Item" class="btn-remove btn-remove2">Remove Item</a>
+                                            </td>
+
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div class="std"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

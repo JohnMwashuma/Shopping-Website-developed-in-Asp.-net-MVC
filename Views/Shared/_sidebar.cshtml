@@ -1,0 +1,35 @@
+﻿@using GrandLabFixers.Models
+@helper SelectedTabClass(string tabName)
+{
+if (tabName == ViewBag.SelectedTab)
+{
+        @: current
+    }
+}
+
+
+
+
+<div class="col-left sidebar col-left-first">
+    <div class="block block-account">
+        <div class="block-title">
+            <strong><span>My Account</span></strong>
+        </div>
+        <div class="block-content">
+            <ul>
+                <li class="@SelectedTabClass("Index")"><a href="@Url.Action("index", "Manage")">Account Dashboard</a></li>
+                <li class="@SelectedTabClass("ChangePassword")"><a href="@Url.Action("ChangePassword", "Manage")">Account Information</a></li>
+                @*@if (User.IsInRole(RoleName.CanManageProducts) != true)
+                {}*@
+                @if (Request.IsAuthenticated)
+                {
+                    if (User.Identity.Name != "grandlabdig2014@gmail.com")
+                    {
+                        <li class="@SelectedTabClass("MyServiceRequests")"><a href="@Url.Action("MyServiceRequests", "Products")">My Services</a></li>
+                        <li class="@SelectedTabClass("MyQuotations")"><a href="@Url.Action("MyQuotations", "Products")">My Quotations</a></li>
+                    }
+                }
+               </ul>
+        </div>
+    </div>
+</div>

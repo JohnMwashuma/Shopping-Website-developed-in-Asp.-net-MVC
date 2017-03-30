@@ -1,0 +1,98 @@
+﻿@model GrandLabFixers.ViewModels.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+
+<div class="main-container col1-layout">
+    <div class="main">
+        <div class="site-width">
+        </div>
+        <div class="col-main relative no-side-content">
+            <div class="inner site-width">
+                <div class="account-create">
+                    <div class="page-title">
+                        <h1>Create an Account</h1>
+                    </div>
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="fieldset">
+                           
+                            <p class="form-instructions">Please enter the following information to create your account.</p>
+                            <p class="required">* Required Fields</p>
+                            <ul class="form-list">
+                                <li class="fields">
+                                    <div class="customer-name-middlename">
+                                        <div class="field name-firstname">
+                                            <label for="firstname" class="required"><em>*</em>First Name</label>
+                                            <div class="input-box">
+                                                @Html.TextBoxFor(m => m.FirstName, new { @class = "input-text required-entry", @type = "text", @spellcheck = "false", @name = "firstname", @id = "firstname", @value = "", @title = "First Name" })
+                                                @Html.ValidationMessageFor(m => m.FirstName)
+                                            </div>
+                                        </div>
+                                        <div class="field name-middlename">
+                                            <label for="middlename">Middle Name/Initial</label>
+                                            <div class="input-box">
+                                                @Html.TextBoxFor(m => m.MiddleName, new { @class = "input-text required-entry", @type = "text", @spellcheck = "false", @name = "middlename", @id = "middlename", @value = "", @title = "Middle Name/Intial" })
+                                                @Html.ValidationMessageFor(m => m.MiddleName)
+                                            </div>
+                                        </div>
+                                        <div class="field name-lastname">
+                                            <label for="lastname" class="required"><em>*</em>Last Name</label>
+                                            <div class="input-box">
+                                                @Html.TextBoxFor(m => m.LastName, new { @class = "input-text required-entry", @type = "text", @spellcheck = "false", @name = "lastname", @id = "lastname", @value = "", @title = "Last Name" })
+                                                @Html.ValidationMessageFor(m => m.LastName)
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <label for="email_address" class="required"><em>*</em>Email Address</label>
+                                    <div class="input-box">
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "input-text validate-email required-entry", @type = "email", @autocapitalize = "off", @autocorrect = "off", @spellcheck = "false", @name = "email", @id = "email_address", @value = "", @title = "Email Address" })
+                                        @Html.ValidationMessageFor(m => m.Email)
+                                    </div>
+                                </li>
+
+                                <li class="fields">
+                                    <div class="field">
+                                        <label for="password" class="required"><em>*</em>Password</label>
+                                        <div class="input-box">
+                                            @Html.PasswordFor(m => m.Password, new { @class = "input-text required-entry validate-password", @type = "password", @name = "password", @id = "password", @title = "Password" })
+                                            @Html.ValidationMessageFor(m => m.Password)
+                                        </div>
+                                    </div>
+                                    <div class="field">
+                                        <label for="confirmation" class="required"><em>*</em>Confirm Password</label>
+                                        <div class="input-box">
+                                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class="input-text required-entry validate-cpassword", @type = "password", @name = "confirmation", @title = "Confirm Password", @id = "confirmation" })
+                                            @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                                         </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+
+
+                        </div>
+                        <div class="buttons-set">
+                            <p class="back-link"><a href="@Url.Action("Login")" class="back-link"><small>« </small>Back</a>
+                            </p>
+                            <button type="submit" title="Register" class="button"><span><span>Register</span></span></button>
+                        </div>
+                    }
+                   
+                </div>
+          
+                <div class="std"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,251 @@
+﻿@model IEnumerable<GrandLabFixers.Models.Product>
+@{
+    ViewBag.Title = "BiologyLab";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="main-container col2-left-layout">
+    <div class="main">
+       
+        <div class="cms-page-banner text-center background-cover relative has-image" style="background-image:url(/Images/biobanner.jpg);">
+            <div class="overlay absolute full z-index-1"></div>
+            <h1 class="title relative z-index-2">
+                Biology Products
+            </h1>
+        </div>                                <div class="clearfix site-width">
+            <div class="col-left sidebar col-left-first">
+                <div class="block block-layered-nav block-layered-nav--no-filters">
+                    <div class="block-title">
+                        <strong><span>Filter By</span></strong>
+                    </div>
+                    <div class="block-content toggle-content">
+                        <p class="block-subtitle block-subtitle--filter">Filter</p>
+                        <dl id="narrow-by-list">
+                            <dt class="odd">Biology</dt>
+                            <dd class="odd">
+                                <ol>
+                                    <li>
+                                        <a href="#">
+                                            Bench Top                                <span class="count">(8)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Floor                                <span class="count">(5)</span>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                            <dt class="even">Chemistry</dt>
+                            <dd class="even">
+                                <ol>
+                                    <li>
+                                        <a href="#">
+                                            Refrigerated                                <span class="count">(8)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Ventilated                                <span class="count">(4)</span>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                            <dt class="odd">Lab Equipment</dt>
+                            <dd class="odd">
+                                <ol>
+                                    <li>
+                                        <a href="#">
+                                            General Purpose                                <span class="count">(2)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            High Speed                                <span class="count">(1)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Micro                                <span class="count">(3)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Micro Ultra                                <span class="count">(3)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Mini                                <span class="count">(2)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Ultra                                <span class="count">(2)</span>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                            <dt class="odd">Physics</dt>
+                            <dd class="odd">
+                                <ol>
+                                    <li>
+                                        <a href="#">
+                                            Blood                                <span class="count">(2)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Bottle                                <span class="count">(5)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Conical                                <span class="count">(5)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Micro                                <span class="count">(12)</span>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                            <dt class="even">Lab Consumables</dt>
+                            <dd class="even">
+                                <ol>
+                                    <li>
+                                        <a href="#">
+                                            4 x 625 ml                                <span class="count">(2)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            6 x 1.5 ml                                <span class="count">(3)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            16 x 0.2 ml                                <span class="count">(3)</span>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                            <dt class="last odd">Power Supplies</dt>
+                            <dd class="last odd">
+                                <ol>
+                                    <li>
+                                        <a href="#">
+                                            Angle                                <span class="count">(12)</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Swing Out                                <span class="count">(8)</span>
+                                        </a>
+                                    </li>
+                                </ol>
+                            </dd>
+                        </dl>
+                        <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-main">
+
+                <div class="category-details is-anchor">
+                    <div class="category-description">
+                        <p><span>We offer a full range of laboratory centrifuges to meet the separation needs of your application. Our offering includes high speed and ultra centrifuges from Hitachi Koki for protocols involving purification of proteins or RNA. Our brand of general purpose and microcentrifuges offer reliable operation for protocols including processing, harvesting, pelleting and separating blood, cells, and more.</span></p>
+                    </div>
+                </div>
+                <div class="category-products">
+                    <div class="toolbar">
+                        <div class="pager">
+                            <div class="count-container">
+                                <p class="amount amount--no-pages">
+                                    Featured Items
+                                </p>
+                            </div>
+
+
+
+
+
+                        </div>
+                    </div>
+
+                    <ol class="products-list">
+                        @foreach (var product in Model)
+                        {
+                            <li>
+                                <a href="@Url.Action("Productdetails", "Products", new {id = product.Id})" class="product-name display-block work-medium h5">@product.Name</a>
+                                <div class="clearfix">
+                                    <a href="@Url.Action("Productdetails", "Products", new {id = product.Id})" class="product-image left thirty">
+                                        @{
+                                            var base64 = Convert.ToBase64String(product.Image);
+                                            var imgSrc = String.Format("data:~/Images;base64,{0}", base64);
+                                        }
+                                        <img src="@imgSrc" alt="NuWind NU-C200R General Purpose Bench Top 2 Liter Refrigerated Centrifuge" class="max-image">
+                                    </a>
+                                    <div class="product-shop left seventy">
+                                        <div class="desc std">
+                                            <p>@product.Details</p><a href="@Url.Action("Productdetails", "Products", new {id = product.Id})" class="link-learn display-block work-medium">Learn More</a>
+                                        </div>
+                                        @using (Html.BeginForm("AddCart", "Products", new { id = product.Id }))
+                                        {
+
+                                            <div class="request-links">
+                                                <button type="submit" title="Add to Cart" class="button green"><span><span>Request Quote</span></span></button>
+                                                @*<a href="@Url.Action("RequestService", "ShoppingCart", new {id = product.Id})" class="service-btn">Request Service</a>*@
+                                            </div>
+                                        }
+
+
+                                    </div>
+                                </div>
+                            </li>
+                                            }
+                        
+                    </ol>
+                    <ul class="pagination">
+                        @{
+                            double totalPage = @ViewBag.TotalPages;
+                        }
+                        @for (int i = 1; i <= totalPage; i++)
+                        {
+                            if (i == ViewBag.Page)
+                            {
+                                <li class="active">@Html.ActionLink(i.ToString() + " ", "BiologyLab", new { Page = i })</li>
+                            }
+                            else
+                            {
+                                <li>@Html.ActionLink(i.ToString() + " ", "BiologyLab", new { Page = i })</li>
+
+                            }
+                        }
+                    </ul>
+
+                    <div class="toolbar-bottom">
+                        <div class="toolbar">
+                            <div class="pager">
+                                <div class="count-container">
+                                    <p class="amount amount--no-pages">
+                                        Featured Items
+                                    </p>
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
