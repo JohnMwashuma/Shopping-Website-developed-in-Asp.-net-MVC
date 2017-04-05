@@ -1,2 +1,6 @@
 # Shopping-Website-developed-in-Asp.-net-MVC
-This is a full fledged website that consist of a front-end where customers can view products, services and request quotation for the same.  While on the back-end clients can track their orders and admin users can add products and respond to clients quotation requests. 
+This website was developed with the folloing technologies:
+1. Asp.net MVC Framework.
+2. Entity Framework Version six ORM.
+3. Bootstrap Framework.
+4. Ms Sql Server 2014.
