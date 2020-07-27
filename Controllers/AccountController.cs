@@ -245,9 +245,9 @@ namespace GrandLabFixers.Controllers
                     // Email stuff
                     const string subject = "Reset your password for grandlabdigitalfixers";
                     string body = "Password Reset Link: " + resetLink;
-                    var fromAddress = new MailAddress("jmwashuma@live.com", "John Mwashuma");
+                    var fromAddress = new MailAddress("example@example.com", "User Name");
                     var toAddress = new MailAddress(model.Email);
-                    const string fromPassword = "6927yoloo";
+                    const string fromPassword = "password";
 
                     var smtp = new SmtpClient
                     {
